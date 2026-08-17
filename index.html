@@ -310,6 +310,28 @@ a.card{ text-decoration:none; }
   .index-item .m{ order:3; }
 }
 
+/* ---------- botón flotante de WhatsApp ---------- */
+.wafloat{
+  position:fixed; right:clamp(16px,2.5vw,30px); bottom:clamp(16px,2.5vw,30px); z-index:300;
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--jade); color:#06120e; text-decoration:none;
+  padding:14px 20px 14px 16px; border-radius:999px;
+  font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  box-shadow:0 10px 34px rgba(0,0,0,.5);
+  transition:.34s var(--ease);
+}
+.wafloat:hover{ background:#5fb894; transform:translateY(-3px); }
+.wafloat svg{ width:19px; height:19px; flex:none; }
+.wafloat .lbl{ white-space:nowrap; }
+@media (max-width:520px){
+  .wafloat{ padding:14px; }
+  .wafloat .lbl{ display:none; }
+}
+@media (prefers-reduced-motion: reduce){ .wafloat{ transition:none; } }
+
+/* ---------- fotografías de tamaño uniforme dentro de una fila ---------- */
+.figrow figure.wide img{ aspect-ratio:4/3; object-fit:cover; object-position:center 32%; width:100%; }
+
 /* ---------- linaje marcial ---------- */
 .lineage{ display:grid; gap:0; max-width:820px; margin-inline:auto; }
 .lin-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
@@ -498,15 +520,11 @@ figure.wide figcaption{
     <a class="brand" href="#/inicio"><b>Edward</b> <span>H. H.</span></a>
 
     <nav class="nav-links" id="navlinks" aria-label="Principal">
-      <a href="#/vision"><span data-l="es">Visión</span><span data-l="en">Vision</span></a>
-      <a href="#/futuro"><span data-l="es">Futuro</span><span data-l="en">Future</span></a>
+      <a href="#/servicios"><span data-l="es">Servicios</span><span data-l="en">Services</span></a>
       <a href="#/ideas"><span data-l="es">Ideas</span><span data-l="en">Ideas</span></a>
-      <a href="#/conferencias"><span data-l="es">Conferencias</span><span data-l="en">Speaking</span></a>
-      <a href="#/docencia"><span data-l="es">Docencia</span><span data-l="en">Teaching</span></a>
-      <a href="#/consultoria"><span data-l="es">Consultoría</span><span data-l="en">Consulting</span></a>
+      <a href="#/trayectoria"><span data-l="es">Trayectoria</span><span data-l="en">Track record</span></a>
       <a href="#/proyectos"><span data-l="es">Proyectos</span><span data-l="en">Ventures</span></a>
-      <a href="#/kungfu"><span data-l="es">Kung Fu</span><span data-l="en">Kung Fu</span></a>
-      <a href="#/biografia"><span data-l="es">Biografía</span><span data-l="en">Biography</span></a>
+      <a href="#/raiz"><span data-l="es">La raíz</span><span data-l="en">The root</span></a>
       <a href="#/contacto"><span data-l="es">Contacto</span><span data-l="en">Contact</span></a>
     </nav>
 
@@ -526,8 +544,7 @@ figure.wide figcaption{
 
 <!-- ══════════════════ INICIO ══════════════════ -->
 <div class="route" data-route="inicio">
-
-  <section class="hero">
+<section class="hero">
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">
@@ -543,7 +560,7 @@ figure.wide figcaption{
           <span data-l="en">I am Edward H. H. I help boards, universities and organizations see what is coming, put it into words, and turn it into something people can start building on Monday morning. Fifteen years doing it across the Americas and Europe.</span>
         </p>
         <div class="btn-row">
-          <a class="btn" href="#/conferencias">
+          <a class="btn" href="#/servicios">
             <span data-l="es">Invítame a tu escenario</span><span data-l="en">Book me to speak</span>
             <span class="arrow">→</span>
           </a>
@@ -564,8 +581,7 @@ figure.wide figcaption{
     <div class="credtrack" id="credtrack"></div>
   </div>
 
-  <!-- tríada del diferenciador -->
-  <section class="section">
+<section class="section">
     <div class="wrap">
       <p class="eyebrow rv">
         <span data-l="es">Por qué me llaman</span><span data-l="en">Why they call me</span>
@@ -604,8 +620,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <!-- cita + foto escenario -->
-  <section class="section">
+<section class="section">
     <div class="wrap grid g2" style="align-items:center">
       <div class="rv">
         <p class="eyebrow"><span data-l="es">La tesis</span><span data-l="en">The thesis</span></p>
@@ -627,19 +642,18 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <!-- cuatro puertas -->
-  <section class="section">
+<section class="section">
     <div class="wrap">
       <p class="eyebrow rv"><span data-l="es">Cómo trabajamos juntos</span><span data-l="en">Ways to work together</span></p>
       <div class="grid g2" style="margin-top:36px">
-        <a class="card rv" href="#/conferencias">
+        <a class="card rv" href="#/servicios">
           <span class="num"><span data-l="es">45–60 min · Español o inglés</span><span data-l="en">45–60 min · Spanish or English</span></span>
           <h3><span data-l="es">Conferencias magistrales</span><span data-l="en">Keynotes</span></h3>
           <p><span data-l="es">Congresos, convenciones, consejos directivos, universidades y aperturas de año. Español o inglés, presencial o remoto.</span>
              <span data-l="en">Conferences, corporate conventions, board sessions, universities and kick-offs. Spanish or English, in person or remote.</span></p>
           <span class="tag"><span data-l="es">Ver los temas →</span><span data-l="en">See the topics →</span></span>
         </a>
-        <a class="card rv" href="#/consultoria">
+        <a class="card rv" href="#/servicios">
           <span class="num"><span data-l="es">Programas de 3 a 12 meses</span><span data-l="en">3 to 12 month programs</span></span>
           <h3><span data-l="es">Consultoría de alta dirección</span><span data-l="en">Executive consulting</span></h3>
           <p><span data-l="es">Comunicación organizacional, cultura y bienestar. Personas felices construyen mejores empresas — y eso se diseña, no se desea.</span>
@@ -647,13 +661,13 @@ figure.wide figcaption{
           <span class="tag"><span data-l="es">Ver los programas →</span><span data-l="en">See the programs →</span></span>
         </a>
         <a class="card rv" href="#/proyectos">
-          <span class="num"><span data-l="es">Con certificación oficial STPS</span><span data-l="en">With official certification</span></span>
-          <h3><span data-l="es">Proyectos educativos</span><span data-l="en">Educational projects</span></h3>
-          <p><span data-l="es">Diseño curricular, programas corporativos y escuelas internas. Con constancias DS-3 con registro STPS a través de EdwCorp.</span>
-             <span data-l="en">Curriculum design, corporate programs and internal academies. With officially registered certifications through EdwCorp.</span></p>
+          <span class="num"><span data-l="es">iogga · EdwCorp · OMAH</span><span data-l="en">iogga · EdwCorp · OMAH</span></span>
+          <h3><span data-l="es">Proyectos propios</span><span data-l="en">My own ventures</span></h3>
+          <p><span data-l="es">Una aplicación, una empresa de formación y una escuela de arte marcial. No hablo de emprendimiento en abstracto: estas tres existen y tienen usuarios.</span>
+             <span data-l="en">An app, a training company and a martial arts school. I do not talk about entrepreneurship in the abstract: these three exist and have users.</span></p>
           <span class="tag"><span data-l="es">Ver los proyectos →</span><span data-l="en">See the ventures →</span></span>
         </a>
-        <a class="card rv" href="#/futuro">
+        <a class="card rv" href="#/ideas">
           <span class="num"><span data-l="es">Ensayos, teorías y series</span><span data-l="en">Essays, theories and series</span></span>
           <h3><span data-l="es">Prospectiva y contenido</span><span data-l="en">Foresight & content</span></h3>
           <p><span data-l="es">Ensayos, teorías y series de contenido sobre lo que viene. Para medios, marcas y áreas de innovación.</span>
@@ -664,8 +678,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <!-- cierre inicio -->
-  <section class="section">
+<section class="section">
     <div class="wrap grid g2" style="align-items:end">
       <div class="rv">
         <p class="eyebrow"><span data-l="es">Siguiente paso</span><span data-l="en">Next step</span></p>
@@ -685,442 +698,9 @@ figure.wide figcaption{
   </section>
 </div>
 
-<!-- ══════════════════ VISIÓN ══════════════════ -->
-<div class="route" data-route="vision">
-  <section class="section">
-    <div class="wrap">
-      <p class="eyebrow"><span data-l="es">Visión</span><span data-l="en">Vision</span></p>
-      <h1 style="max-width:16ch">
-        <span data-l="es">Creo que el futuro es un problema de traducción.</span>
-        <span data-l="en">I believe the future is a translation problem.</span>
-      </h1>
-      <p class="lead" style="margin-top:34px">
-        <span data-l="es">Casi todo lo que llamamos «el futuro» ya está aquí, escrito en algún laboratorio, en algún papel, en la conducta de alguien de veinte años. Lo que falta no es inventarlo: es traducirlo a un lenguaje que un consejo directivo pueda aprobar y un equipo pueda ejecutar. Ese es mi oficio.</span>
-        <span data-l="en">Almost everything we call "the future" is already here — written in a lab, in a paper, in the behavior of someone in their twenties. What is missing is not invention: it is translation into a language a board can approve and a team can execute. That is my craft.</span>
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap grid g2">
-      <div class="sticky-side">
-        <p class="eyebrow"><span data-l="es">Principios de trabajo</span><span data-l="en">Working principles</span></p>
-        <h2><span data-l="es">Lo que sostiene cada proyecto que acepto</span><span data-l="en">What holds up every project I take</span></h2>
-      </div>
-      <div class="stack">
-        <div class="rv"><h4><span data-l="es">La calidad está en el producto; la excelencia, en las personas.</span><span data-l="en">Quality lives in the product; excellence lives in people.</span></h4></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">Todo se puede representar numéricamente para ser analizado y mejorado.</span><span data-l="en">Anything can be represented numerically to be analyzed and improved.</span></h4></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">La innovación es lo que ya está en el mercado, genera retorno y se sostiene en el tiempo. Lo demás es un experimento.</span><span data-l="en">Innovation is what is already in the market, generates return, and holds over time. The rest is an experiment.</span></h4></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">Para que algo sea válido, debe existir una evidencia válida.</span><span data-l="en">For something to be valid, valid evidence must exist.</span></h4></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">El orden del espacio de trabajo —físico o virtual— refleja la calidad de la persona y de la empresa.</span><span data-l="en">The order of a workspace — physical or virtual — reflects the quality of the person and the company.</span></h4></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">Es fácil complicar; es difícil simplificar. Lo verdaderamente intuitivo no necesita manual.</span><span data-l="en">Complicating is easy; simplifying is hard. What is truly intuitive needs no manual.</span></h4></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">El activo más importante es la confianza.</span><span data-l="en">The most important asset is trust.</span></h4></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">Las empresas se consolidan por dentro antes de expandirse.</span><span data-l="en">Companies consolidate internally before they expand.</span></h4></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">El servicio y la humildad son los distintivos de los niveles organizacionales más altos.</span><span data-l="en">Service and humility are the marks of the highest levels of an organization.</span></h4></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">El trabajo dignifica: impacta la vida de quien lo hace y la sociedad que lo recibe. Se asume con responsabilidad y respeto.</span><span data-l="en">Work dignifies: it shapes the life of whoever does it and the society that receives it. It is taken on with responsibility and respect.</span></h4></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <p class="pull rv" style="max-width:26ch">
-        <span data-l="es">Todos los días se puede hacer algo para optimizar recursos. <em class="hl">Todos los días.</em></span>
-        <span data-l="en">Every day there is something you can do to optimize resources. <em class="hl">Every day.</em></span>
-      </p>
-    </div>
-  </section>
-
-  <!-- la raíz -->
-  <section class="section">
-    <div class="wrap">
-      <p class="eyebrow rv"><span data-l="es">La raíz</span><span data-l="en">The root</span></p>
-      <h2 class="rv" style="max-width:20ch">
-        <span data-l="es">Soy cristiano. Para mí, eso no es una religión.</span>
-        <span data-l="en">I am a Christian. To me, that is not a religion.</span>
-      </h2>
-
-      <div class="grid g2" style="margin-top:clamp(34px,4vw,56px); align-items:start">
-        <div class="prose rv" style="max-width:58ch">
-          <div data-l="es">
-            <p>Lo escribo aquí porque explica todo lo anterior: los principios con los que trabajo, la insistencia en la confianza como el activo más importante, la convicción de que una empresa se mide por lo que le hace a la gente que la sostiene.</p>
-
-            <p>Creo en Dios, y no creo que Dios haya dejado religiones. Dejó su Espíritu Santo, y dejó un ejemplo con nombre y con rostro: Jesucristo.</p>
-
-            <p>Cuando escribo <em>religión</em> con minúscula me refiero a lo que construyó el hombre: las estructuras, las marcas, las denominaciones, las sucursales, las disputas sobre quién tiene la razón. Pero sí creo en una <strong>Religión</strong> con mayúscula, y no la definí yo. Está escrita en una sola línea:</p>
-
-            <blockquote class="scripture">
-              <p>«La religión pura y verdadera a los ojos de Dios Padre consiste en ocuparse de los huérfanos y de las viudas en sus aflicciones, y no dejar que el mundo te corrompa.»</p>
-              <cite>Santiago 1:27 · Nueva Traducción Viviente</cite>
-            </blockquote>
-
-            <p>Esa Religión es la del amor, y tiene una vara de medir incómoda: no se mide en asistencia, ni en edificios, ni en discursos. Se mide en huérfanos atendidos y en viudas acompañadas.</p>
-
-            <p>Por eso no se trata de estar en la religión verdadera, sino en el Dios verdadero. Y hay una sola forma que conozco de verificarlo, y tampoco es doctrinal: es mirar el resultado. Si tu fe no te sirve para unir, para amar y para perdonar, entonces todavía no estás ahí. Una fe que separa se traicionó a sí misma.</p>
-
-            <h3>La comunidad de la que formo parte</h3>
-
-            <p>No tiene nombre, ni bandera, ni sucursales. Está en Chihuahua y en varias ciudades de la República, y guarda comunión con una gran iglesia en Chile y con hermanos en Argentina, en Miami y en otros países.</p>
-
-            <p>Nos reunimos en ese sentir y deliberadamente fuera de lo que el hombre le construyó encima a la fe: las marcas, las denominaciones, los negocios, las figuras públicas y quienes se enriquecen de ella.</p>
-
-            <p>Nada de esto me aleja de nadie; me obliga a lo contrario. Puedo sentarme, trabajar y tener comunión real con cualquier persona —crea lo que crea, o no crea nada— porque el amor no pide credenciales. En una sala de juntas a eso se le llama respeto. En mi vida se llama fe, y es la misma cosa.</p>
-          </div>
-
-          <div data-l="en">
-            <p>I write it here because it explains everything above: the principles I work by, the insistence on trust as the most important asset, the conviction that a company is measured by what it does to the people who hold it up.</p>
-
-            <p>I believe in God, and I do not believe God left religions behind. He left his Holy Spirit, and he left an example with a name and a face: Jesus Christ.</p>
-
-            <p>When I write <em>religion</em> in lowercase I mean what human beings built: the structures, the brands, the denominations, the branches, the arguments over who is right. But I do believe in a <strong>Religion</strong> with a capital letter, and I did not define it. It is written in a single line:</p>
-
-            <blockquote class="scripture">
-              <p>"Pure and genuine religion in the sight of God the Father means caring for orphans and widows in their distress and refusing to let the world corrupt you."</p>
-              <cite>James 1:27 · New Living Translation</cite>
-            </blockquote>
-
-            <p>That Religion is the religion of love, and it carries an uncomfortable measuring stick: it is not measured in attendance, or buildings, or speeches. It is measured in orphans cared for and widows accompanied.</p>
-
-            <p>So it is not about being in the true religion, but in the true God. And there is only one way I know to verify that, and it is not doctrinal either: look at the result. If your faith does not serve to unite, to love and to forgive, then you are not there yet. A faith that separates has already betrayed itself.</p>
-
-            <h3>The community I belong to</h3>
-
-            <p>It has no name, no flag and no branches. It is in Chihuahua and in several cities across Mexico, and it keeps communion with a large church in Chile and with brothers and sisters in Argentina, in Miami and in other countries.</p>
-
-            <p>We gather in that spirit and deliberately outside what people built on top of faith: the brands, the denominations, the businesses, the public figures, and those who grow rich from it.</p>
-
-            <p>None of this keeps me away from anyone; it obliges me to the opposite. I can sit down, work and be in real communion with any person — whatever they believe, or if they believe nothing at all — because love asks for no credentials. In a boardroom that is called respect. In my life it is called faith, and they are the same thing.</p>
-          </div>
-        </div>
-
-        <div class="sticky-side stack">
-          <figure class="wide rv" style="margin:0">
-            <img src="assets/comunidad.jpg" alt="Edward H. H. con hermanos de la comunidad" width="1224" height="642" loading="lazy">
-            <figcaption><span data-l="es">El amor no pide credenciales</span><span data-l="en">Love asks for no credentials</span></figcaption>
-          </figure>
-          <p class="note rv" style="margin:0">
-            <span data-l="es">Sin nombre, sin bandera, sin sucursales.</span>
-            <span data-l="en">No name, no flag, no branches.</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ══════════════════ FUTURO (índice) ══════════════════ -->
-<div class="route" data-route="futuro">
-  <section class="section">
-    <div class="wrap">
-      <p class="eyebrow"><span data-l="es">Prospectiva</span><span data-l="en">Foresight</span></p>
-      <h1 style="max-width:14ch"><span data-l="es">Cartas desde el futuro cercano</span><span data-l="en">Letters from the near future</span></h1>
-      <p class="lead" style="margin-top:30px">
-        <span data-l="es">Teorías propias, no resúmenes de otros. Escribo sobre lo que veo pasar en las organizaciones antes de que tenga nombre en los reportes. Cada texto se puede convertir en conferencia, taller o serie de contenido para tu empresa.</span>
-        <span data-l="en">Original theories, not summaries of other people's work. I write about what I see happening inside organizations before it has a name in the reports. Each piece can become a keynote, a workshop or a content series for your company.</span>
-      </p>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0; border-top:0">
-    <div class="wrap">
-      <div class="index-list">
-        <a class="index-item" href="#/futuro/tres-relojes">
-          <span class="n">001</span>
-          <span class="t">
-            <span data-l="es">La teoría de los tres relojes<small>Por qué la tecnología corre, la organización camina y la persona respira — y por qué ahí nace casi todo el dolor de una empresa moderna.</small></span>
-            <span data-l="en">The theory of the three clocks<small>Why technology runs, the organization walks and the person breathes — and why nearly all the pain of a modern company is born there.</small></span>
-          </span>
-          <span class="m"><span data-l="es">Teoría</span><span data-l="en">Theory</span></span>
-        </a>
-        <a class="index-item" href="#/futuro/decada-atencion">
-          <span class="n">002</span>
-          <span class="t">
-            <span data-l="es">La década de la atención<small>El recurso escaso del próximo ciclo no será el talento ni el capital. Será la capacidad de una organización para sostener una idea en la cabeza de su gente.</small></span>
-            <span data-l="en">The attention decade<small>The scarce resource of the next cycle will not be talent or capital. It will be an organization's ability to hold one idea in its people's heads.</small></span>
-          </span>
-          <span class="m"><span data-l="es">Ensayo</span><span data-l="en">Essay</span></span>
-        </a>
-        <a class="index-item" href="#/futuro/regreso-del-oficio">
-          <span class="n">003</span>
-          <span class="t">
-            <span data-l="es">El regreso del oficio<small>Cuando la máquina hace el trabajo promedio, lo único que queda con valor es el criterio. Lo que la automatización le va a devolver al artesano.</small></span>
-            <span data-l="en">The return of craft<small>When the machine does the average work, the only thing left with value is judgment. What automation is about to give back to the craftsman.</small></span>
-          </span>
-          <span class="m"><span data-l="es">Ensayo</span><span data-l="en">Essay</span></span>
-        </a>
-      </div>
-
-      <p class="note rv" style="margin-top:40px">
-        <span data-l="es">Se publican textos nuevos de forma irregular y honesta: cuando hay algo que decir.</span>
-        <span data-l="en">New pieces are published irregularly and honestly: whenever there is something worth saying.</span>
-      </p>
-    </div>
-  </section>
-</div>
-
-<!-- ── artículo 001 ── -->
-<div class="route" data-route="futuro/tres-relojes">
-  <section class="section">
-    <div class="wrap">
-      <a class="back" href="#/futuro">← <span data-l="es">Prospectiva</span><span data-l="en">Foresight</span></a>
-      <p class="artmeta">
-        <span>001</span>
-        <span data-l="es">Teoría</span><span data-l="en">Theory</span>
-        <span data-l="es">9 min de lectura</span><span data-l="en">9 min read</span>
-      </p>
-      <h1 style="max-width:15ch"><span data-l="es">La teoría de los tres relojes</span><span data-l="en">The theory of the three clocks</span></h1>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0; border-top:0">
-    <div class="wrap">
-      <div class="prose">
-        <div data-l="es">
-          <p class="first">Llevo quince años entrando a organizaciones distintas con el mismo encargo disfrazado de mil maneras: <em>esto no está funcionando y no sabemos por qué</em>. Empresas industriales, universidades, gobiernos, arranques de tecnología. Culturas opuestas, presupuestos incomparables. Y sin embargo, debajo del síntoma, casi siempre encuentro la misma avería.</p>
-          <p>No es falta de talento. Rara vez es falta de dinero. Es que dentro de la misma organización hay tres relojes que no marcan la misma hora.</p>
-
-          <h3>El primer reloj: la tecnología</h3>
-          <p>El reloj de la tecnología <strong>corre</strong>. Se mueve en ciclos de semanas. Una herramienta que era vanguardia en enero es estándar en junio y estorbo en diciembre. Nadie lo controla; nadie lo pidió; simplemente avanza, y avanza más rápido cada año.</p>
-          <p>Es el reloj más ruidoso, y por eso es el que las juntas directivas escuchan. La mayor parte de la ansiedad corporativa de esta década consiste en mirar ese reloj y sentir que uno va tarde.</p>
-
-          <h3>El segundo reloj: la organización</h3>
-          <p>El reloj de la organización <strong>camina</strong>. Se mueve en ciclos de trimestres y años fiscales. Tiene sus propios ritmos: presupuestos, evaluaciones, auditorías, comités. No es lento por torpeza; es lento porque su función es <em>no romperse</em>. Una organización es, en el fondo, una máquina de sostener acuerdos, y los acuerdos tardan.</p>
-          <blockquote>Pedirle a una organización que corra al ritmo de la tecnología es pedirle a un puente que vibre como una cuerda de guitarra. Se puede. Una vez.</blockquote>
-
-          <h3>El tercer reloj: la persona</h3>
-          <p>Y luego está el reloj de la persona, que <strong>respira</strong>. Se mueve en ciclos biológicos: sueño, atención, duelo, entusiasmo, agotamiento. Un ser humano tarda entre seis y dieciocho meses en cambiar un hábito profesional de verdad. No hay curso, plataforma ni comunicado interno que altere esa constante. Es física, no actitud.</p>
-          <p>Este es el reloj que nadie mira en los tableros de control, y es el único que decide si el proyecto vive.</p>
-
-          <h3>El desfase es el diagnóstico</h3>
-          <p>Cuando una empresa me llama porque «la transformación digital no está aterrizando», casi nunca hay un problema de transformación digital. Hay un problema de sincronización: se compró tecnología a velocidad de semanas, se aprobó gobernanza a velocidad de trimestres, y se le pidió a la gente que cambiara a velocidad de comunicado.</p>
-          <p>La resistencia al cambio, ese fantasma al que se le echa la culpa de todo, casi nunca es resistencia. Es <strong>desfase</strong>. La gente no se opone: va en su hora.</p>
-
-          <h3>Qué hacer con esto</h3>
-          <p>La respuesta no es acelerar a las personas. Es diseñar los tres relojes juntos, desde el principio:</p>
-          <ul>
-            <li><strong>Amortiguar el primero.</strong> No toda tecnología nueva merece entrar. La disciplina de decir «todavía no» es una ventaja competitiva subestimada.</li>
-            <li><strong>Afinar el segundo.</strong> La mayoría de las organizaciones no necesitan ir más rápido: necesitan decidir más rápido y ejecutar al mismo ritmo. Son cosas distintas.</li>
-            <li><strong>Respetar el tercero.</strong> Presupuestar el tiempo humano del cambio con la misma seriedad con la que se presupuesta la licencia del software. Si el proyecto dura ocho meses y el hábito tarda doce, el proyecto ya fracasó el día que se firmó.</li>
-          </ul>
-          <p>Ninguna de estas tres cosas es tecnológica. Las tres son de comunicación y de dirección. Por eso este trabajo no lo hace un proveedor de software: lo hace alguien que sabe leer la hora en los tres relojes al mismo tiempo.</p>
-        </div>
-
-        <div data-l="en">
-          <p class="first">For fifteen years I have walked into very different organizations carrying the same request in a thousand disguises: <em>this isn't working and we don't know why</em>. Industrial companies, universities, governments, technology start-ups. Opposite cultures, incomparable budgets. And yet, underneath the symptom, I almost always find the same fault.</p>
-          <p>It is not a lack of talent. It is rarely a lack of money. It is that inside the same organization there are three clocks that do not tell the same time.</p>
-
-          <h3>The first clock: technology</h3>
-          <p>Technology's clock <strong>runs</strong>. It moves in cycles of weeks. A tool that was cutting edge in January is standard by June and an obstacle by December. Nobody controls it; nobody asked for it; it simply advances, and it advances faster every year.</p>
-          <p>It is the loudest clock, which is why boards listen to it. Most corporate anxiety this decade consists of staring at that clock and feeling late.</p>
-
-          <h3>The second clock: the organization</h3>
-          <p>The organization's clock <strong>walks</strong>. It moves in quarters and fiscal years. It has its own rhythms: budgets, reviews, audits, committees. It is not slow out of clumsiness; it is slow because its job is <em>not to break</em>. An organization is, at bottom, a machine for holding agreements together, and agreements take time.</p>
-          <blockquote>Asking an organization to run at the speed of technology is asking a bridge to vibrate like a guitar string. It can be done. Once.</blockquote>
-
-          <h3>The third clock: the person</h3>
-          <p>And then there is the person's clock, which <strong>breathes</strong>. It moves in biological cycles: sleep, attention, grief, enthusiasm, exhaustion. A human being takes somewhere between six and eighteen months to genuinely change a professional habit. No course, platform or internal memo alters that constant. It is physics, not attitude.</p>
-          <p>This is the clock nobody puts on a dashboard, and it is the only one that decides whether the project lives.</p>
-
-          <h3>The gap is the diagnosis</h3>
-          <p>When a company calls me because "the digital transformation isn't landing", there is almost never a digital transformation problem. There is a synchronization problem: technology was bought at the speed of weeks, governance was approved at the speed of quarters, and people were asked to change at the speed of an announcement.</p>
-          <p>Resistance to change — the ghost blamed for everything — is almost never resistance. It is a <strong>time gap</strong>. People are not opposing you: they are running on their own clock.</p>
-
-          <h3>What to do about it</h3>
-          <p>The answer is not to accelerate people. It is to design the three clocks together, from the start:</p>
-          <ul>
-            <li><strong>Dampen the first.</strong> Not every new technology deserves to come in. The discipline of saying "not yet" is a badly underrated competitive advantage.</li>
-            <li><strong>Tune the second.</strong> Most organizations do not need to move faster: they need to <em>decide</em> faster and execute at a steady pace. Those are different things.</li>
-            <li><strong>Respect the third.</strong> Budget the human time of change as seriously as you budget the software license. If the project runs eight months and the habit takes twelve, the project failed the day it was signed.</li>
-          </ul>
-          <p>None of these three things is technological. All three are matters of communication and leadership. Which is why this work is not done by a software vendor: it is done by someone who can read all three clocks at once.</p>
-        </div>
-      </div>
-
-      <div class="btn-row">
-        <a class="btn" href="#/contacto"><span data-l="es">Quiero esta conferencia</span><span data-l="en">I want this keynote</span> <span class="arrow">→</span></a>
-        <a class="btn ghost" href="#/futuro"><span data-l="es">Más textos</span><span data-l="en">More pieces</span></a>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ── artículo 002 ── -->
-<div class="route" data-route="futuro/decada-atencion">
-  <section class="section">
-    <div class="wrap">
-      <a class="back" href="#/futuro">← <span data-l="es">Prospectiva</span><span data-l="en">Foresight</span></a>
-      <p class="artmeta">
-        <span>002</span>
-        <span data-l="es">Ensayo</span><span data-l="en">Essay</span>
-        <span data-l="es">6 min de lectura</span><span data-l="en">6 min read</span>
-      </p>
-      <h1 style="max-width:15ch"><span data-l="es">La década de la atención</span><span data-l="en">The attention decade</span></h1>
-    </div>
-  </section>
-  <section class="section" style="padding-top:0; border-top:0">
-    <div class="wrap">
-      <div class="prose">
-        <div data-l="es">
-          <p class="first">Durante veinte años las empresas compitieron por talento. Durante los próximos diez van a competir por algo más escaso y mucho peor administrado: la atención de la gente que ya contrataron.</p>
-          <p>Piénselo en frío. Usted tiene un equipo brillante. Cada persona recibe, en promedio, más de cien interrupciones al día entre correos, chats, notificaciones, juntas y avisos internos. Su estrategia —la que costó meses y un consejo entero— compite en igualdad de condiciones con una notificación de una aplicación de comida.</p>
-          <blockquote>Una estrategia que no sobrevive a la bandeja de entrada de su propia gente no es una estrategia. Es un documento.</blockquote>
-          <p>El error de diagnóstico es tratar esto como un problema de productividad personal: cursos de gestión del tiempo, aplicaciones, retos de enfoque. Es un problema <em>estructural</em> de comunicación organizacional. La atención de una empresa es un recurso colectivo, y hoy se gasta sin presupuesto, sin dueño y sin auditoría.</p>
-          <h3>Tres cosas que van a volverse normales</h3>
-          <ul>
-            <li><strong>El presupuesto de atención.</strong> Igual que existe un presupuesto financiero, veremos organizaciones que decidan explícitamente cuántas iniciativas simultáneas puede sostener su gente. La respuesta casi siempre es «menos de las que tenemos».</li>
-            <li><strong>La comunicación interna como función crítica.</strong> Dejará de ser el área que hace el boletín y pasará a ser la que protege la capacidad cognitiva de la organización.</li>
-            <li><strong>El silencio como beneficio.</strong> Bloques de tiempo protegidos institucionalmente, no por voluntad heroica de cada quien. La empresa que primero lo formalice va a robar talento sin subir sueldos.</li>
-          </ul>
-          <p>Quien dirija esta década no será quien tenga más información, sino quien logre que su gente sostenga una sola idea en la cabeza el tiempo suficiente para construirla.</p>
-        </div>
-        <div data-l="en">
-          <p class="first">For twenty years companies competed for talent. For the next ten they will compete for something scarcer and far worse managed: the attention of the people they already hired.</p>
-          <p>Think about it coldly. You have a brilliant team. Each person receives, on average, more than a hundred interruptions a day across email, chat, notifications, meetings and internal announcements. Your strategy — the one that cost months and an entire board — competes on equal footing with a food-delivery notification.</p>
-          <blockquote>A strategy that cannot survive your own people's inbox is not a strategy. It is a document.</blockquote>
-          <p>The diagnostic error is treating this as a personal productivity problem: time-management courses, apps, focus challenges. It is a <em>structural</em> problem of organizational communication. A company's attention is a collective resource, and today it is spent with no budget, no owner and no audit.</p>
-          <h3>Three things that will become normal</h3>
-          <ul>
-            <li><strong>The attention budget.</strong> Just as there is a financial budget, we will see organizations explicitly decide how many simultaneous initiatives their people can carry. The answer is almost always "fewer than we have".</li>
-            <li><strong>Internal communication as a critical function.</strong> It will stop being the team that makes the newsletter and become the team that protects the organization's cognitive capacity.</li>
-            <li><strong>Silence as a benefit.</strong> Protected blocks of time, institutionally guaranteed rather than heroically defended by each individual. The first company to formalize it will steal talent without raising salaries.</li>
-          </ul>
-          <p>Whoever leads this decade will not be whoever has the most information, but whoever gets their people to hold a single idea in mind long enough to build it.</p>
-        </div>
-      </div>
-      <div class="btn-row">
-        <a class="btn" href="#/contacto"><span data-l="es">Hablemos de esto</span><span data-l="en">Let's talk about this</span> <span class="arrow">→</span></a>
-        <a class="btn ghost" href="#/futuro"><span data-l="es">Más textos</span><span data-l="en">More pieces</span></a>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ── artículo 003 ── -->
-<div class="route" data-route="futuro/regreso-del-oficio">
-  <section class="section">
-    <div class="wrap">
-      <a class="back" href="#/futuro">← <span data-l="es">Prospectiva</span><span data-l="en">Foresight</span></a>
-      <p class="artmeta">
-        <span>003</span>
-        <span data-l="es">Ensayo</span><span data-l="en">Essay</span>
-        <span data-l="es">7 min de lectura</span><span data-l="en">7 min read</span>
-      </p>
-      <h1 style="max-width:14ch"><span data-l="es">El regreso del oficio</span><span data-l="en">The return of craft</span></h1>
-    </div>
-  </section>
-  <section class="section" style="padding-top:0; border-top:0">
-    <div class="wrap">
-      <div class="prose">
-        <div data-l="es">
-          <p class="first">La automatización no viene por los trabajos difíciles. Viene por los trabajos <em>promedio</em>. Y esa distinción va a reordenar el valor profesional de una manera que casi nadie está preparando.</p>
-          <p>Durante un siglo, la educación y la empresa premiaron lo mismo: hacer bien la tarea estándar. El informe correcto, la clase correcta, el plano correcto, el correo correcto. Construimos una civilización entera de profesionales promedio excelentes. Ese era el objetivo, y funcionaba.</p>
-          <p>Ese trabajo es exactamente el que la máquina hace ahora en segundos y sin quejarse.</p>
-          <blockquote>Cuando lo promedio se vuelve gratis, sólo queda con valor lo que exige criterio: decidir qué vale la pena hacer, y responder por ello.</blockquote>
-          <h3>Lo que sube de precio</h3>
-          <p>Tres cosas, y ninguna es técnica:</p>
-          <ul>
-            <li><strong>El criterio.</strong> Elegir entre diez opciones buenas cuál sirve a esta empresa, en este momento, con esta gente. La máquina genera opciones; no carga con las consecuencias.</li>
-            <li><strong>La relación.</strong> La confianza no se automatiza. Quien tiene un vínculo real con un cliente, un alumno o un equipo tiene algo que ningún modelo replica.</li>
-            <li><strong>El gusto.</strong> Esa palabra incómoda. La capacidad de distinguir lo bueno de lo correcto. Es lo último que se aprende y lo primero que se nota.</li>
-          </ul>
-          <h3>Por eso hablo de oficio</h3>
-          <p>El artesano medieval no competía por hacer más rápido: competía por hacerlo de un modo reconocible. Firmaba su trabajo. Se hacía responsable de él durante décadas. Creo que hacia allá vamos otra vez, sólo que con herramientas infinitamente más potentes.</p>
-          <p>Y eso cambia lo que hay que enseñar. Si la educación sigue formando profesionales promedio excelentes, va a graduar gente perfectamente calificada para competir contra una máquina en el único terreno donde la máquina ya ganó. La pregunta que le hago a cada institución con la que trabajo es incómoda pero necesaria: <em>¿están formando criterio, o están formando obediencia técnica?</em></p>
-        </div>
-        <div data-l="en">
-          <p class="first">Automation is not coming for the hard jobs. It is coming for the <em>average</em> ones. And that distinction is about to reorder professional value in a way almost nobody is preparing for.</p>
-          <p>For a century, education and business rewarded the same thing: doing the standard task well. The correct report, the correct class, the correct drawing, the correct email. We built an entire civilization of excellent average professionals. That was the goal, and it worked.</p>
-          <p>That work is precisely what the machine now does in seconds, without complaining.</p>
-          <blockquote>When average becomes free, the only thing left with value is what demands judgment: deciding what is worth doing, and answering for it.</blockquote>
-          <h3>What gets more expensive</h3>
-          <p>Three things, and none of them technical:</p>
-          <ul>
-            <li><strong>Judgment.</strong> Choosing which of ten good options serves this company, at this moment, with these people. The machine generates options; it does not carry the consequences.</li>
-            <li><strong>Relationship.</strong> Trust cannot be automated. Whoever holds a real bond with a client, a student or a team holds something no model replicates.</li>
-            <li><strong>Taste.</strong> That uncomfortable word. The ability to tell the good from the merely correct. It is the last thing learned and the first thing noticed.</li>
-          </ul>
-          <h3>Which is why I talk about craft</h3>
-          <p>The medieval craftsman did not compete on speed: he competed on making something recognizable. He signed his work. He stood behind it for decades. I believe that is where we are heading again, only with infinitely more powerful tools.</p>
-          <p>And that changes what must be taught. If education keeps producing excellent average professionals, it will graduate people perfectly qualified to compete against a machine on the one field the machine has already won. The question I put to every institution I work with is uncomfortable but necessary: <em>are you forming judgment, or are you forming technical obedience?</em></p>
-        </div>
-      </div>
-      <div class="btn-row">
-        <a class="btn" href="#/contacto"><span data-l="es">Llevar esto a mi institución</span><span data-l="en">Bring this to my institution</span> <span class="arrow">→</span></a>
-        <a class="btn ghost" href="#/futuro"><span data-l="es">Más textos</span><span data-l="en">More pieces</span></a>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ══════════════════ IDEAS ══════════════════ -->
-<div class="route" data-route="ideas">
-  <section class="section">
-    <div class="wrap">
-      <p class="eyebrow"><span data-l="es">Cuaderno</span><span data-l="en">Notebook</span></p>
-      <h1 style="max-width:13ch"><span data-l="es">Ideas que todavía no existen</span><span data-l="en">Ideas that do not exist yet</span></h1>
-      <p class="lead" style="margin-top:30px">
-        <span data-l="es">Un cuaderno abierto. Conceptos, prototipos y provocaciones que traigo en la cabeza y que algún día serán un producto, un programa o una empresa. Si alguno le hace sentido a su organización, lo construimos juntos.</span>
-        <span data-l="en">An open notebook. Concepts, prototypes and provocations I carry around, any of which may one day become a product, a program or a company. If one of them makes sense for your organization, we build it together.</span>
-      </p>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top:0; border-top:0">
-    <div class="wrap grid g2">
-      <article class="card rv">
-        <span class="num">IDEA 01</span>
-        <h3><span data-l="es">El tablero de bienestar como KPI de consejo</span><span data-l="en">The wellbeing dashboard as a board-level KPI</span></h3>
-        <p><span data-l="es">Un instrumento que mide el estado emocional de una organización con la misma seriedad con la que mide el flujo de efectivo, y lo lleva al consejo cada trimestre. No una encuesta de clima: un indicador con umbrales, dueño y consecuencias presupuestales.</span>
-           <span data-l="en">An instrument that measures an organization's emotional state as seriously as it measures cash flow, and takes it to the board every quarter. Not a climate survey: a real indicator with thresholds, an owner and budget consequences.</span></p>
-        <span class="tag"><span data-l="es">Prototipo conceptual</span><span data-l="en">Concept prototype</span></span>
-      </article>
-
-      <article class="card rv">
-        <span class="num">IDEA 02</span>
-        <h3><span data-l="es">Universidad de ciclo corto dentro de la empresa</span><span data-l="en">A short-cycle university inside the company</span></h3>
-        <p><span data-l="es">Escuelas internas que no imitan a la universidad tradicional: programas de ocho semanas, evaluados por evidencia real de trabajo, con certificación oficial. La empresa deja de esperar el egresado que necesita y lo forma.</span>
-           <span data-l="en">Internal academies that do not imitate traditional universities: eight-week programs assessed on real work evidence, with official certification. The company stops waiting for the graduate it needs and forms them instead.</span></p>
-        <span class="tag"><span data-l="es">En desarrollo · EdwCorp</span><span data-l="en">In development · EdwCorp</span></span>
-      </article>
-
-      <article class="card rv">
-        <span class="num">IDEA 03</span>
-        <h3><span data-l="es">Ritual de cierre: la junta que apaga</span><span data-l="en">The closing ritual: the meeting that switches off</span></h3>
-        <p><span data-l="es">Toda organización sabe empezar cosas y ninguna sabe terminarlas. Un formato breve, replicable y casi ceremonial para cerrar proyectos, liberar a la gente y hacer memoria institucional de lo aprendido. Suena menor. Cambia culturas.</span>
-           <span data-l="en">Every organization knows how to start things and none knows how to end them. A short, repeatable, almost ceremonial format to close projects, release people, and turn what was learned into institutional memory. Sounds minor. Changes cultures.</span></p>
-        <span class="tag"><span data-l="es">Probado en campo</span><span data-l="en">Field tested</span></span>
-      </article>
-
-      <article class="card rv">
-        <span class="num">IDEA 04</span>
-        <h3><span data-l="es">Respiración antes de decidir</span><span data-l="en">Breathe before you decide</span></h3>
-        <p><span data-l="es">Tomado directamente del kung fu: noventa segundos de respiración estructurada antes de cualquier decisión irreversible de consejo. Es la intervención más barata que conozco con efecto medible sobre la calidad de una decisión.</span>
-           <span data-l="en">Taken directly from kung fu: ninety seconds of structured breathing before any irreversible board decision. It is the cheapest intervention I know of with a measurable effect on decision quality.</span></p>
-        <span class="tag"><span data-l="es">En práctica</span><span data-l="en">In practice</span></span>
-      </article>
-    </div>
-
-    <div class="wrap" style="margin-top:clamp(40px,6vw,80px)">
-      <figure class="wide rv">
-        <img src="assets/panel-visionarios.jpg" alt="Edward H. H. en el panel Visionarios del Foro Cactus" width="1600" height="757" loading="lazy">
-        <figcaption><span data-l="es">Panel «Visionarios» · Foro Cactus, Red Emprende Chihuahua Capital</span><span data-l="en">"Visionaries" panel · Foro Cactus, Red Emprende Chihuahua Capital</span></figcaption>
-      </figure>
-    </div>
-  </section>
-</div>
-
-<!-- ══════════════════ CONFERENCIAS ══════════════════ -->
-<div class="route" data-route="conferencias">
-  <section class="section">
+<!-- ══════════════════ SERVICIOS ══════════════════ -->
+<div class="route" data-route="servicios">
+<section class="section">
     <div class="wrap">
       <p class="eyebrow"><span data-l="es">Conferencias y talleres</span><span data-l="en">Speaking & workshops</span></p>
       <h1 style="max-width:15ch"><span data-l="es">Salgo del escenario cuando la sala ya cambió de conversación.</span><span data-l="en">I leave the stage when the room has already changed the conversation.</span></h1>
@@ -1134,9 +714,9 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <section class="section">
+<section class="section">
     <div class="wrap">
-      <div class="grid g2" style="margin-bottom:clamp(46px,6vw,80px)">
+      <div class="grid g2 figrow" style="margin-bottom:clamp(46px,6vw,80px)">
         <figure class="wide rv">
           <img src="assets/panel-visionarios.jpg" alt="Panel Visionarios en el Foro Cactus" width="1600" height="757" loading="lazy">
           <figcaption><span data-l="es">Panel «Visionarios» · Foro Cactus</span><span data-l="en">"Visionaries" panel · Foro Cactus</span></figcaption>
@@ -1203,7 +783,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <section class="section">
+<section class="section">
     <div class="wrap grid g2" style="align-items:center">
       <figure class="wide rv">
         <img src="assets/taller-lasalle.jpg" alt="Edward H. H. impartiendo un taller" width="1291" height="1126" loading="lazy">
@@ -1224,8 +804,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <!-- catálogo completo -->
-  <section class="section">
+<section class="section">
     <div class="wrap">
       <figure class="wide rv" style="margin-bottom:clamp(40px,5vw,64px)">
         <img src="assets/taller-herradura.jpg" alt="Taller con grupo en mesa de herradura" width="1227" height="818" loading="lazy">
@@ -1353,11 +932,54 @@ figure.wide figcaption{
       </div>
     </div>
   </section>
-</div>
 
-<!-- ══════════════════ DOCENCIA ══════════════════ -->
-<div class="route" data-route="docencia">
-  <section class="section">
+<section class="section">
+    <div class="wrap">
+      <p class="eyebrow"><span data-l="es">Consultoría</span><span data-l="en">Consulting</span></p>
+      <h1 style="max-width:14ch"><span data-l="es">Personas felices construyen mejores empresas.</span><span data-l="en">Happy people build better companies.</span></h1>
+      <p class="lead" style="margin-top:30px">
+        <span data-l="es">Es la frase más fácil de decir y la más difícil de implementar. La felicidad organizacional no es una prestación ni una campaña: es un sistema de comunicación, carga de trabajo, criterios de decisión y cultura. Se diseña, se mide y se corrige. Eso es lo que hago dentro de su empresa.</span>
+        <span data-l="en">It is the easiest sentence to say and the hardest to implement. Organizational happiness is not a perk or a campaign: it is a system of communication, workload, decision criteria and culture. It gets designed, measured and corrected. That is what I do inside your company.</span>
+      </p>
+    </div>
+  </section>
+
+<section class="section">
+    <div class="wrap">
+      <p class="eyebrow rv"><span data-l="es">Programas</span><span data-l="en">Programs</span></p>
+      <div class="grid g3" style="margin-top:36px">
+        <article class="card rv">
+          <h3><span data-l="es">Mindfulness organizacional</span><span data-l="en">Organizational mindfulness</span></h3>
+          <p><span data-l="es">Programa presencial para equipos y liderazgo: atención, respiración, presencia y manejo de carga mental — con la disciplina que aprendí en veinte años de arte marcial, traducida al lenguaje de la empresa. Sesiones periódicas, medibles, sin misticismo.</span>
+             <span data-l="en">In-person program for teams and leadership: attention, breathing, presence and mental-load management — with the discipline of twenty years of martial arts, translated into business language. Recurring, measurable sessions, no mysticism.</span></p>
+          <span class="tag"><span data-l="es">Presencial · 3 a 12 meses</span><span data-l="en">On site · 3 to 12 months</span></span>
+        </article>
+        <article class="card rv">
+          <h3><span data-l="es">Diagnóstico de comunicación interna</span><span data-l="en">Internal communication audit</span></h3>
+          <p><span data-l="es">Dónde se pierde la información, quién no se entera, cuántas iniciativas simultáneas carga su gente y qué mensajes se contradicen entre sí. Termina en un mapa y un plan, no en una presentación.</span>
+             <span data-l="en">Where information gets lost, who never hears it, how many simultaneous initiatives your people carry, and which messages contradict each other. It ends in a map and a plan, not a slide deck.</span></p>
+          <span class="tag"><span data-l="es">6 a 10 semanas</span><span data-l="en">6 to 10 weeks</span></span>
+        </article>
+        <article class="card rv">
+          <h3><span data-l="es">Acompañamiento a dirección</span><span data-l="en">Executive advisory</span></h3>
+          <p><span data-l="es">Sesiones periódicas y confidenciales con quien dirige. Un interlocutor externo que no compite por su puesto, entiende de tecnología y de gente, y dice lo que su equipo no le va a decir.</span>
+             <span data-l="en">Recurring, confidential sessions with whoever leads. An outside counterpart who is not competing for your position, understands both technology and people, and says what your team will not.</span></p>
+          <span class="tag"><span data-l="es">Retainer mensual</span><span data-l="en">Monthly retainer</span></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<section class="section">
+    <div class="wrap">
+      <p class="pull rv"><span data-l="es">La calidad está en el producto. La excelencia está en las personas.</span><span data-l="en">Quality lives in the product. Excellence lives in people.</span></p>
+      <div class="btn-row rv">
+        <a class="btn" href="#/contacto"><span data-l="es">Solicitar una propuesta</span><span data-l="en">Request a proposal</span> <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+<section class="section">
     <div class="wrap">
       <p class="eyebrow"><span data-l="es">Docencia</span><span data-l="en">Teaching</span></p>
       <h1 style="max-width:16ch"><span data-l="es">Trece años dando clase sin dejar de trabajar en la industria.</span><span data-l="en">Thirteen years teaching without ever leaving industry.</span></h1>
@@ -1371,7 +993,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <section class="section" style="padding-top:0; border-top:0">
+<section class="section" style="padding-top:0; border-top:0">
     <div class="wrap grid g2">
       <figure class="wide rv">
         <img src="assets/sala-juntas.jpg" alt="Edward H. H. impartiendo una sesión de formación" width="1429" height="1200" loading="lazy">
@@ -1384,7 +1006,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <section class="section">
+<section class="section">
     <div class="wrap">
       <p class="eyebrow rv"><span data-l="es">Dónde enseño</span><span data-l="en">Where I teach</span></p>
       <div class="grid g3" style="margin-top:36px">
@@ -1429,7 +1051,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <section class="section">
+<section class="section">
     <div class="wrap">
       <figure class="wide rv" style="margin-bottom:clamp(40px,5vw,64px)">
         <img src="assets/taller-cerca.jpg" alt="Edward H. H. impartiendo una sesión" width="1227" height="818" loading="lazy">
@@ -1493,58 +1115,449 @@ figure.wide figcaption{
   </section>
 </div>
 
-<!-- ══════════════════ CONSULTORÍA ══════════════════ -->
-<div class="route" data-route="consultoria">
-  <section class="section">
+<!-- ══════════════════ IDEAS ══════════════════ -->
+<div class="route" data-route="ideas">
+<section class="section">
     <div class="wrap">
-      <p class="eyebrow"><span data-l="es">Consultoría</span><span data-l="en">Consulting</span></p>
-      <h1 style="max-width:14ch"><span data-l="es">Personas felices construyen mejores empresas.</span><span data-l="en">Happy people build better companies.</span></h1>
-      <p class="lead" style="margin-top:30px">
-        <span data-l="es">Es la frase más fácil de decir y la más difícil de implementar. La felicidad organizacional no es una prestación ni una campaña: es un sistema de comunicación, carga de trabajo, criterios de decisión y cultura. Se diseña, se mide y se corrige. Eso es lo que hago dentro de su empresa.</span>
-        <span data-l="en">It is the easiest sentence to say and the hardest to implement. Organizational happiness is not a perk or a campaign: it is a system of communication, workload, decision criteria and culture. It gets designed, measured and corrected. That is what I do inside your company.</span>
+      <p class="eyebrow"><span data-l="es">Visión</span><span data-l="en">Vision</span></p>
+      <h1 style="max-width:16ch">
+        <span data-l="es">Creo que el futuro es un problema de traducción.</span>
+        <span data-l="en">I believe the future is a translation problem.</span>
+      </h1>
+      <p class="lead" style="margin-top:34px">
+        <span data-l="es">Casi todo lo que llamamos «el futuro» ya está aquí, escrito en algún laboratorio, en algún papel, en la conducta de alguien de veinte años. Lo que falta no es inventarlo: es traducirlo a un lenguaje que un consejo directivo pueda aprobar y un equipo pueda ejecutar. Ese es mi oficio.</span>
+        <span data-l="en">Almost everything we call "the future" is already here — written in a lab, in a paper, in the behavior of someone in their twenties. What is missing is not invention: it is translation into a language a board can approve and a team can execute. That is my craft.</span>
       </p>
     </div>
   </section>
 
-  <section class="section">
+<section class="section">
     <div class="wrap">
-      <p class="eyebrow rv"><span data-l="es">Programas</span><span data-l="en">Programs</span></p>
-      <div class="grid g3" style="margin-top:36px">
-        <article class="card rv">
-          <h3><span data-l="es">Mindfulness organizacional</span><span data-l="en">Organizational mindfulness</span></h3>
-          <p><span data-l="es">Programa presencial para equipos y liderazgo: atención, respiración, presencia y manejo de carga mental — con la disciplina que aprendí en veinte años de arte marcial, traducida al lenguaje de la empresa. Sesiones periódicas, medibles, sin misticismo.</span>
-             <span data-l="en">In-person program for teams and leadership: attention, breathing, presence and mental-load management — with the discipline of twenty years of martial arts, translated into business language. Recurring, measurable sessions, no mysticism.</span></p>
-          <span class="tag"><span data-l="es">Presencial · 3 a 12 meses</span><span data-l="en">On site · 3 to 12 months</span></span>
-        </article>
-        <article class="card rv">
-          <h3><span data-l="es">Diagnóstico de comunicación interna</span><span data-l="en">Internal communication audit</span></h3>
-          <p><span data-l="es">Dónde se pierde la información, quién no se entera, cuántas iniciativas simultáneas carga su gente y qué mensajes se contradicen entre sí. Termina en un mapa y un plan, no en una presentación.</span>
-             <span data-l="en">Where information gets lost, who never hears it, how many simultaneous initiatives your people carry, and which messages contradict each other. It ends in a map and a plan, not a slide deck.</span></p>
-          <span class="tag"><span data-l="es">6 a 10 semanas</span><span data-l="en">6 to 10 weeks</span></span>
-        </article>
-        <article class="card rv">
-          <h3><span data-l="es">Acompañamiento a dirección</span><span data-l="en">Executive advisory</span></h3>
-          <p><span data-l="es">Sesiones periódicas y confidenciales con quien dirige. Un interlocutor externo que no compite por su puesto, entiende de tecnología y de gente, y dice lo que su equipo no le va a decir.</span>
-             <span data-l="en">Recurring, confidential sessions with whoever leads. An outside counterpart who is not competing for your position, understands both technology and people, and says what your team will not.</span></p>
-          <span class="tag"><span data-l="es">Retainer mensual</span><span data-l="en">Monthly retainer</span></span>
-        </article>
+      <p class="eyebrow"><span data-l="es">Prospectiva</span><span data-l="en">Foresight</span></p>
+      <h1 style="max-width:14ch"><span data-l="es">Cartas desde el futuro cercano</span><span data-l="en">Letters from the near future</span></h1>
+      <p class="lead" style="margin-top:30px">
+        <span data-l="es">Teorías propias, no resúmenes de otros. Escribo sobre lo que veo pasar en las organizaciones antes de que tenga nombre en los reportes. Cada texto se puede convertir en conferencia, taller o serie de contenido para tu empresa.</span>
+        <span data-l="en">Original theories, not summaries of other people's work. I write about what I see happening inside organizations before it has a name in the reports. Each piece can become a keynote, a workshop or a content series for your company.</span>
+      </p>
+    </div>
+  </section>
+
+<section class="section" style="padding-top:0; border-top:0">
+    <div class="wrap">
+      <div class="index-list">
+        <a class="index-item" href="#/futuro/tres-relojes">
+          <span class="n">001</span>
+          <span class="t">
+            <span data-l="es">La teoría de los tres relojes<small>Por qué la tecnología corre, la organización camina y la persona respira — y por qué ahí nace casi todo el dolor de una empresa moderna.</small></span>
+            <span data-l="en">The theory of the three clocks<small>Why technology runs, the organization walks and the person breathes — and why nearly all the pain of a modern company is born there.</small></span>
+          </span>
+          <span class="m"><span data-l="es">Teoría</span><span data-l="en">Theory</span></span>
+        </a>
+        <a class="index-item" href="#/futuro/decada-atencion">
+          <span class="n">002</span>
+          <span class="t">
+            <span data-l="es">La década de la atención<small>El recurso escaso del próximo ciclo no será el talento ni el capital. Será la capacidad de una organización para sostener una idea en la cabeza de su gente.</small></span>
+            <span data-l="en">The attention decade<small>The scarce resource of the next cycle will not be talent or capital. It will be an organization's ability to hold one idea in its people's heads.</small></span>
+          </span>
+          <span class="m"><span data-l="es">Ensayo</span><span data-l="en">Essay</span></span>
+        </a>
+        <a class="index-item" href="#/futuro/regreso-del-oficio">
+          <span class="n">003</span>
+          <span class="t">
+            <span data-l="es">El regreso del oficio<small>Cuando la máquina hace el trabajo promedio, lo único que queda con valor es el criterio. Lo que la automatización le va a devolver al artesano.</small></span>
+            <span data-l="en">The return of craft<small>When the machine does the average work, the only thing left with value is judgment. What automation is about to give back to the craftsman.</small></span>
+          </span>
+          <span class="m"><span data-l="es">Ensayo</span><span data-l="en">Essay</span></span>
+        </a>
+      </div>
+
+      <p class="note rv" style="margin-top:40px">
+        <span data-l="es">Se publican textos nuevos de forma irregular y honesta: cuando hay algo que decir.</span>
+        <span data-l="en">New pieces are published irregularly and honestly: whenever there is something worth saying.</span>
+      </p>
+    </div>
+  </section>
+
+<section class="section">
+    <div class="wrap">
+      <p class="eyebrow"><span data-l="es">Cuaderno</span><span data-l="en">Notebook</span></p>
+      <h1 style="max-width:13ch"><span data-l="es">Ideas que todavía no existen</span><span data-l="en">Ideas that do not exist yet</span></h1>
+      <p class="lead" style="margin-top:30px">
+        <span data-l="es">Un cuaderno abierto. Conceptos, prototipos y provocaciones que traigo en la cabeza y que algún día serán un producto, un programa o una empresa. Si alguno le hace sentido a su organización, lo construimos juntos.</span>
+        <span data-l="en">An open notebook. Concepts, prototypes and provocations I carry around, any of which may one day become a product, a program or a company. If one of them makes sense for your organization, we build it together.</span>
+      </p>
+    </div>
+  </section>
+
+<section class="section" style="padding-top:0; border-top:0">
+    <div class="wrap grid g2">
+      <article class="card rv">
+        <span class="num">IDEA 01</span>
+        <h3><span data-l="es">El tablero de bienestar como KPI de consejo</span><span data-l="en">The wellbeing dashboard as a board-level KPI</span></h3>
+        <p><span data-l="es">Un instrumento que mide el estado emocional de una organización con la misma seriedad con la que mide el flujo de efectivo, y lo lleva al consejo cada trimestre. No una encuesta de clima: un indicador con umbrales, dueño y consecuencias presupuestales.</span>
+           <span data-l="en">An instrument that measures an organization's emotional state as seriously as it measures cash flow, and takes it to the board every quarter. Not a climate survey: a real indicator with thresholds, an owner and budget consequences.</span></p>
+        <span class="tag"><span data-l="es">Prototipo conceptual</span><span data-l="en">Concept prototype</span></span>
+      </article>
+
+      <article class="card rv">
+        <span class="num">IDEA 02</span>
+        <h3><span data-l="es">Universidad de ciclo corto dentro de la empresa</span><span data-l="en">A short-cycle university inside the company</span></h3>
+        <p><span data-l="es">Escuelas internas que no imitan a la universidad tradicional: programas de ocho semanas, evaluados por evidencia real de trabajo, con certificación oficial. La empresa deja de esperar el egresado que necesita y lo forma.</span>
+           <span data-l="en">Internal academies that do not imitate traditional universities: eight-week programs assessed on real work evidence, with official certification. The company stops waiting for the graduate it needs and forms them instead.</span></p>
+        <span class="tag"><span data-l="es">En desarrollo · EdwCorp</span><span data-l="en">In development · EdwCorp</span></span>
+      </article>
+
+      <article class="card rv">
+        <span class="num">IDEA 03</span>
+        <h3><span data-l="es">Ritual de cierre: la junta que apaga</span><span data-l="en">The closing ritual: the meeting that switches off</span></h3>
+        <p><span data-l="es">Toda organización sabe empezar cosas y ninguna sabe terminarlas. Un formato breve, replicable y casi ceremonial para cerrar proyectos, liberar a la gente y hacer memoria institucional de lo aprendido. Suena menor. Cambia culturas.</span>
+           <span data-l="en">Every organization knows how to start things and none knows how to end them. A short, repeatable, almost ceremonial format to close projects, release people, and turn what was learned into institutional memory. Sounds minor. Changes cultures.</span></p>
+        <span class="tag"><span data-l="es">Probado en campo</span><span data-l="en">Field tested</span></span>
+      </article>
+
+      <article class="card rv">
+        <span class="num">IDEA 04</span>
+        <h3><span data-l="es">Respiración antes de decidir</span><span data-l="en">Breathe before you decide</span></h3>
+        <p><span data-l="es">Tomado directamente del kung fu: noventa segundos de respiración estructurada antes de cualquier decisión irreversible de consejo. Es la intervención más barata que conozco con efecto medible sobre la calidad de una decisión.</span>
+           <span data-l="en">Taken directly from kung fu: ninety seconds of structured breathing before any irreversible board decision. It is the cheapest intervention I know of with a measurable effect on decision quality.</span></p>
+        <span class="tag"><span data-l="es">En práctica</span><span data-l="en">In practice</span></span>
+      </article>
+    </div>
+
+    <div class="wrap" style="margin-top:clamp(40px,6vw,80px)">
+      <figure class="wide rv">
+        <img src="assets/panel-visionarios.jpg" alt="Edward H. H. en el panel Visionarios del Foro Cactus" width="1600" height="757" loading="lazy">
+        <figcaption><span data-l="es">Panel «Visionarios» · Foro Cactus, Red Emprende Chihuahua Capital</span><span data-l="en">"Visionaries" panel · Foro Cactus, Red Emprende Chihuahua Capital</span></figcaption>
+      </figure>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════ FUTURO/TRES-RELOJES ══════════════════ -->
+<div class="route" data-route="futuro/tres-relojes">
+<section class="section">
+    <div class="wrap">
+      <a class="back" href="#/ideas">← <span data-l="es">Ideas y prospectiva</span><span data-l="en">Ideas and foresight</span></a>
+      <p class="artmeta">
+        <span>001</span>
+        <span data-l="es">Teoría</span><span data-l="en">Theory</span>
+        <span data-l="es">9 min de lectura</span><span data-l="en">9 min read</span>
+      </p>
+      <h1 style="max-width:15ch"><span data-l="es">La teoría de los tres relojes</span><span data-l="en">The theory of the three clocks</span></h1>
+    </div>
+  </section>
+
+<section class="section" style="padding-top:0; border-top:0">
+    <div class="wrap">
+      <div class="prose">
+        <div data-l="es">
+          <p class="first">Llevo quince años entrando a organizaciones distintas con el mismo encargo disfrazado de mil maneras: <em>esto no está funcionando y no sabemos por qué</em>. Empresas industriales, universidades, gobiernos, arranques de tecnología. Culturas opuestas, presupuestos incomparables. Y sin embargo, debajo del síntoma, casi siempre encuentro la misma avería.</p>
+          <p>No es falta de talento. Rara vez es falta de dinero. Es que dentro de la misma organización hay tres relojes que no marcan la misma hora.</p>
+
+          <h3>El primer reloj: la tecnología</h3>
+          <p>El reloj de la tecnología <strong>corre</strong>. Se mueve en ciclos de semanas. Una herramienta que era vanguardia en enero es estándar en junio y estorbo en diciembre. Nadie lo controla; nadie lo pidió; simplemente avanza, y avanza más rápido cada año.</p>
+          <p>Es el reloj más ruidoso, y por eso es el que las juntas directivas escuchan. La mayor parte de la ansiedad corporativa de esta década consiste en mirar ese reloj y sentir que uno va tarde.</p>
+
+          <h3>El segundo reloj: la organización</h3>
+          <p>El reloj de la organización <strong>camina</strong>. Se mueve en ciclos de trimestres y años fiscales. Tiene sus propios ritmos: presupuestos, evaluaciones, auditorías, comités. No es lento por torpeza; es lento porque su función es <em>no romperse</em>. Una organización es, en el fondo, una máquina de sostener acuerdos, y los acuerdos tardan.</p>
+          <blockquote>Pedirle a una organización que corra al ritmo de la tecnología es pedirle a un puente que vibre como una cuerda de guitarra. Se puede. Una vez.</blockquote>
+
+          <h3>El tercer reloj: la persona</h3>
+          <p>Y luego está el reloj de la persona, que <strong>respira</strong>. Se mueve en ciclos biológicos: sueño, atención, duelo, entusiasmo, agotamiento. Un ser humano tarda entre seis y dieciocho meses en cambiar un hábito profesional de verdad. No hay curso, plataforma ni comunicado interno que altere esa constante. Es física, no actitud.</p>
+          <p>Este es el reloj que nadie mira en los tableros de control, y es el único que decide si el proyecto vive.</p>
+
+          <h3>El desfase es el diagnóstico</h3>
+          <p>Cuando una empresa me llama porque «la transformación digital no está aterrizando», casi nunca hay un problema de transformación digital. Hay un problema de sincronización: se compró tecnología a velocidad de semanas, se aprobó gobernanza a velocidad de trimestres, y se le pidió a la gente que cambiara a velocidad de comunicado.</p>
+          <p>La resistencia al cambio, ese fantasma al que se le echa la culpa de todo, casi nunca es resistencia. Es <strong>desfase</strong>. La gente no se opone: va en su hora.</p>
+
+          <h3>Qué hacer con esto</h3>
+          <p>La respuesta no es acelerar a las personas. Es diseñar los tres relojes juntos, desde el principio:</p>
+          <ul>
+            <li><strong>Amortiguar el primero.</strong> No toda tecnología nueva merece entrar. La disciplina de decir «todavía no» es una ventaja competitiva subestimada.</li>
+            <li><strong>Afinar el segundo.</strong> La mayoría de las organizaciones no necesitan ir más rápido: necesitan decidir más rápido y ejecutar al mismo ritmo. Son cosas distintas.</li>
+            <li><strong>Respetar el tercero.</strong> Presupuestar el tiempo humano del cambio con la misma seriedad con la que se presupuesta la licencia del software. Si el proyecto dura ocho meses y el hábito tarda doce, el proyecto ya fracasó el día que se firmó.</li>
+          </ul>
+          <p>Ninguna de estas tres cosas es tecnológica. Las tres son de comunicación y de dirección. Por eso este trabajo no lo hace un proveedor de software: lo hace alguien que sabe leer la hora en los tres relojes al mismo tiempo.</p>
+        </div>
+
+        <div data-l="en">
+          <p class="first">For fifteen years I have walked into very different organizations carrying the same request in a thousand disguises: <em>this isn't working and we don't know why</em>. Industrial companies, universities, governments, technology start-ups. Opposite cultures, incomparable budgets. And yet, underneath the symptom, I almost always find the same fault.</p>
+          <p>It is not a lack of talent. It is rarely a lack of money. It is that inside the same organization there are three clocks that do not tell the same time.</p>
+
+          <h3>The first clock: technology</h3>
+          <p>Technology's clock <strong>runs</strong>. It moves in cycles of weeks. A tool that was cutting edge in January is standard by June and an obstacle by December. Nobody controls it; nobody asked for it; it simply advances, and it advances faster every year.</p>
+          <p>It is the loudest clock, which is why boards listen to it. Most corporate anxiety this decade consists of staring at that clock and feeling late.</p>
+
+          <h3>The second clock: the organization</h3>
+          <p>The organization's clock <strong>walks</strong>. It moves in quarters and fiscal years. It has its own rhythms: budgets, reviews, audits, committees. It is not slow out of clumsiness; it is slow because its job is <em>not to break</em>. An organization is, at bottom, a machine for holding agreements together, and agreements take time.</p>
+          <blockquote>Asking an organization to run at the speed of technology is asking a bridge to vibrate like a guitar string. It can be done. Once.</blockquote>
+
+          <h3>The third clock: the person</h3>
+          <p>And then there is the person's clock, which <strong>breathes</strong>. It moves in biological cycles: sleep, attention, grief, enthusiasm, exhaustion. A human being takes somewhere between six and eighteen months to genuinely change a professional habit. No course, platform or internal memo alters that constant. It is physics, not attitude.</p>
+          <p>This is the clock nobody puts on a dashboard, and it is the only one that decides whether the project lives.</p>
+
+          <h3>The gap is the diagnosis</h3>
+          <p>When a company calls me because "the digital transformation isn't landing", there is almost never a digital transformation problem. There is a synchronization problem: technology was bought at the speed of weeks, governance was approved at the speed of quarters, and people were asked to change at the speed of an announcement.</p>
+          <p>Resistance to change — the ghost blamed for everything — is almost never resistance. It is a <strong>time gap</strong>. People are not opposing you: they are running on their own clock.</p>
+
+          <h3>What to do about it</h3>
+          <p>The answer is not to accelerate people. It is to design the three clocks together, from the start:</p>
+          <ul>
+            <li><strong>Dampen the first.</strong> Not every new technology deserves to come in. The discipline of saying "not yet" is a badly underrated competitive advantage.</li>
+            <li><strong>Tune the second.</strong> Most organizations do not need to move faster: they need to <em>decide</em> faster and execute at a steady pace. Those are different things.</li>
+            <li><strong>Respect the third.</strong> Budget the human time of change as seriously as you budget the software license. If the project runs eight months and the habit takes twelve, the project failed the day it was signed.</li>
+          </ul>
+          <p>None of these three things is technological. All three are matters of communication and leadership. Which is why this work is not done by a software vendor: it is done by someone who can read all three clocks at once.</p>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn" href="#/contacto"><span data-l="es">Quiero esta conferencia</span><span data-l="en">I want this keynote</span> <span class="arrow">→</span></a>
+        <a class="btn ghost" href="#/ideas"><span data-l="es">Más textos</span><span data-l="en">More pieces</span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════ FUTURO/DECADA-ATENCION ══════════════════ -->
+<div class="route" data-route="futuro/decada-atencion">
+<section class="section">
+    <div class="wrap">
+      <a class="back" href="#/ideas">← <span data-l="es">Ideas y prospectiva</span><span data-l="en">Ideas and foresight</span></a>
+      <p class="artmeta">
+        <span>002</span>
+        <span data-l="es">Ensayo</span><span data-l="en">Essay</span>
+        <span data-l="es">6 min de lectura</span><span data-l="en">6 min read</span>
+      </p>
+      <h1 style="max-width:15ch"><span data-l="es">La década de la atención</span><span data-l="en">The attention decade</span></h1>
+    </div>
+  </section>
+
+<section class="section" style="padding-top:0; border-top:0">
+    <div class="wrap">
+      <div class="prose">
+        <div data-l="es">
+          <p class="first">Durante veinte años las empresas compitieron por talento. Durante los próximos diez van a competir por algo más escaso y mucho peor administrado: la atención de la gente que ya contrataron.</p>
+          <p>Piénselo en frío. Usted tiene un equipo brillante. Cada persona recibe, en promedio, más de cien interrupciones al día entre correos, chats, notificaciones, juntas y avisos internos. Su estrategia —la que costó meses y un consejo entero— compite en igualdad de condiciones con una notificación de una aplicación de comida.</p>
+          <blockquote>Una estrategia que no sobrevive a la bandeja de entrada de su propia gente no es una estrategia. Es un documento.</blockquote>
+          <p>El error de diagnóstico es tratar esto como un problema de productividad personal: cursos de gestión del tiempo, aplicaciones, retos de enfoque. Es un problema <em>estructural</em> de comunicación organizacional. La atención de una empresa es un recurso colectivo, y hoy se gasta sin presupuesto, sin dueño y sin auditoría.</p>
+          <h3>Tres cosas que van a volverse normales</h3>
+          <ul>
+            <li><strong>El presupuesto de atención.</strong> Igual que existe un presupuesto financiero, veremos organizaciones que decidan explícitamente cuántas iniciativas simultáneas puede sostener su gente. La respuesta casi siempre es «menos de las que tenemos».</li>
+            <li><strong>La comunicación interna como función crítica.</strong> Dejará de ser el área que hace el boletín y pasará a ser la que protege la capacidad cognitiva de la organización.</li>
+            <li><strong>El silencio como beneficio.</strong> Bloques de tiempo protegidos institucionalmente, no por voluntad heroica de cada quien. La empresa que primero lo formalice va a robar talento sin subir sueldos.</li>
+          </ul>
+          <p>Quien dirija esta década no será quien tenga más información, sino quien logre que su gente sostenga una sola idea en la cabeza el tiempo suficiente para construirla.</p>
+        </div>
+        <div data-l="en">
+          <p class="first">For twenty years companies competed for talent. For the next ten they will compete for something scarcer and far worse managed: the attention of the people they already hired.</p>
+          <p>Think about it coldly. You have a brilliant team. Each person receives, on average, more than a hundred interruptions a day across email, chat, notifications, meetings and internal announcements. Your strategy — the one that cost months and an entire board — competes on equal footing with a food-delivery notification.</p>
+          <blockquote>A strategy that cannot survive your own people's inbox is not a strategy. It is a document.</blockquote>
+          <p>The diagnostic error is treating this as a personal productivity problem: time-management courses, apps, focus challenges. It is a <em>structural</em> problem of organizational communication. A company's attention is a collective resource, and today it is spent with no budget, no owner and no audit.</p>
+          <h3>Three things that will become normal</h3>
+          <ul>
+            <li><strong>The attention budget.</strong> Just as there is a financial budget, we will see organizations explicitly decide how many simultaneous initiatives their people can carry. The answer is almost always "fewer than we have".</li>
+            <li><strong>Internal communication as a critical function.</strong> It will stop being the team that makes the newsletter and become the team that protects the organization's cognitive capacity.</li>
+            <li><strong>Silence as a benefit.</strong> Protected blocks of time, institutionally guaranteed rather than heroically defended by each individual. The first company to formalize it will steal talent without raising salaries.</li>
+          </ul>
+          <p>Whoever leads this decade will not be whoever has the most information, but whoever gets their people to hold a single idea in mind long enough to build it.</p>
+        </div>
+      </div>
+      <div class="btn-row">
+        <a class="btn" href="#/contacto"><span data-l="es">Hablemos de esto</span><span data-l="en">Let's talk about this</span> <span class="arrow">→</span></a>
+        <a class="btn ghost" href="#/ideas"><span data-l="es">Más textos</span><span data-l="en">More pieces</span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════ FUTURO/REGRESO-DEL-OFICIO ══════════════════ -->
+<div class="route" data-route="futuro/regreso-del-oficio">
+<section class="section">
+    <div class="wrap">
+      <a class="back" href="#/ideas">← <span data-l="es">Ideas y prospectiva</span><span data-l="en">Ideas and foresight</span></a>
+      <p class="artmeta">
+        <span>003</span>
+        <span data-l="es">Ensayo</span><span data-l="en">Essay</span>
+        <span data-l="es">7 min de lectura</span><span data-l="en">7 min read</span>
+      </p>
+      <h1 style="max-width:14ch"><span data-l="es">El regreso del oficio</span><span data-l="en">The return of craft</span></h1>
+    </div>
+  </section>
+
+<section class="section" style="padding-top:0; border-top:0">
+    <div class="wrap">
+      <div class="prose">
+        <div data-l="es">
+          <p class="first">La automatización no viene por los trabajos difíciles. Viene por los trabajos <em>promedio</em>. Y esa distinción va a reordenar el valor profesional de una manera que casi nadie está preparando.</p>
+          <p>Durante un siglo, la educación y la empresa premiaron lo mismo: hacer bien la tarea estándar. El informe correcto, la clase correcta, el plano correcto, el correo correcto. Construimos una civilización entera de profesionales promedio excelentes. Ese era el objetivo, y funcionaba.</p>
+          <p>Ese trabajo es exactamente el que la máquina hace ahora en segundos y sin quejarse.</p>
+          <blockquote>Cuando lo promedio se vuelve gratis, sólo queda con valor lo que exige criterio: decidir qué vale la pena hacer, y responder por ello.</blockquote>
+          <h3>Lo que sube de precio</h3>
+          <p>Tres cosas, y ninguna es técnica:</p>
+          <ul>
+            <li><strong>El criterio.</strong> Elegir entre diez opciones buenas cuál sirve a esta empresa, en este momento, con esta gente. La máquina genera opciones; no carga con las consecuencias.</li>
+            <li><strong>La relación.</strong> La confianza no se automatiza. Quien tiene un vínculo real con un cliente, un alumno o un equipo tiene algo que ningún modelo replica.</li>
+            <li><strong>El gusto.</strong> Esa palabra incómoda. La capacidad de distinguir lo bueno de lo correcto. Es lo último que se aprende y lo primero que se nota.</li>
+          </ul>
+          <h3>Por eso hablo de oficio</h3>
+          <p>El artesano medieval no competía por hacer más rápido: competía por hacerlo de un modo reconocible. Firmaba su trabajo. Se hacía responsable de él durante décadas. Creo que hacia allá vamos otra vez, sólo que con herramientas infinitamente más potentes.</p>
+          <p>Y eso cambia lo que hay que enseñar. Si la educación sigue formando profesionales promedio excelentes, va a graduar gente perfectamente calificada para competir contra una máquina en el único terreno donde la máquina ya ganó. La pregunta que le hago a cada institución con la que trabajo es incómoda pero necesaria: <em>¿están formando criterio, o están formando obediencia técnica?</em></p>
+        </div>
+        <div data-l="en">
+          <p class="first">Automation is not coming for the hard jobs. It is coming for the <em>average</em> ones. And that distinction is about to reorder professional value in a way almost nobody is preparing for.</p>
+          <p>For a century, education and business rewarded the same thing: doing the standard task well. The correct report, the correct class, the correct drawing, the correct email. We built an entire civilization of excellent average professionals. That was the goal, and it worked.</p>
+          <p>That work is precisely what the machine now does in seconds, without complaining.</p>
+          <blockquote>When average becomes free, the only thing left with value is what demands judgment: deciding what is worth doing, and answering for it.</blockquote>
+          <h3>What gets more expensive</h3>
+          <p>Three things, and none of them technical:</p>
+          <ul>
+            <li><strong>Judgment.</strong> Choosing which of ten good options serves this company, at this moment, with these people. The machine generates options; it does not carry the consequences.</li>
+            <li><strong>Relationship.</strong> Trust cannot be automated. Whoever holds a real bond with a client, a student or a team holds something no model replicates.</li>
+            <li><strong>Taste.</strong> That uncomfortable word. The ability to tell the good from the merely correct. It is the last thing learned and the first thing noticed.</li>
+          </ul>
+          <h3>Which is why I talk about craft</h3>
+          <p>The medieval craftsman did not compete on speed: he competed on making something recognizable. He signed his work. He stood behind it for decades. I believe that is where we are heading again, only with infinitely more powerful tools.</p>
+          <p>And that changes what must be taught. If education keeps producing excellent average professionals, it will graduate people perfectly qualified to compete against a machine on the one field the machine has already won. The question I put to every institution I work with is uncomfortable but necessary: <em>are you forming judgment, or are you forming technical obedience?</em></p>
+        </div>
+      </div>
+      <div class="btn-row">
+        <a class="btn" href="#/contacto"><span data-l="es">Llevar esto a mi institución</span><span data-l="en">Bring this to my institution</span> <span class="arrow">→</span></a>
+        <a class="btn ghost" href="#/ideas"><span data-l="es">Más textos</span><span data-l="en">More pieces</span></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════ TRAYECTORIA ══════════════════ -->
+<div class="route" data-route="trayectoria">
+<section class="section">
+    <div class="wrap grid g2" style="align-items:center">
+      <div>
+        <p class="eyebrow"><span data-l="es">Biografía</span><span data-l="en">Biography</span></p>
+        <h1><span data-l="es">Omar Eduardo Hernández Hernández</span><span data-l="en">Omar Eduardo Hernández Hernández</span></h1>
+        <p class="lead" style="margin-top:28px">
+          <span data-l="es">Máster y especialista en dirección de proyectos tecnológicos. Licenciado en comunicación organizacional. Técnico en informática. Quince años liderando equipos e iniciativas en tecnología, educación superior y desarrollo empresarial, con proyectos de implementación en América y Europa. Chihuahua, México.</span>
+          <span data-l="en">Master's degree and specialist in technology project management. Bachelor's in organizational communication. Technician in computer science. Fifteen years leading teams and initiatives across technology, higher education and business development, with implementation projects in the Americas and Europe. Chihuahua, Mexico.</span>
+        </p>
+      </div>
+      <figure class="portrait rv" style="margin:0">
+        <img src="assets/retrato.jpg" alt="Retrato de Edward H. H." width="1100" height="1375" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+<section class="section">
+    <div class="wrap grid g2">
+      <div class="sticky-side">
+        <p class="eyebrow"><span data-l="es">Trayectoria</span><span data-l="en">Career</span></p>
+        <h2><span data-l="es">Dónde he estado</span><span data-l="en">Where I have been</span></h2>
+      </div>
+      <div class="stack">
+        <div class="rv"><h4>Axys Global — <span data-l="es">Jefe de la oficina de gestión de proyectos (EPMO)</span><span data-l="en">Head of the Enterprise PMO</span></h4><p class="muted mb0">2026 — <span data-l="es">actualidad · Portafolio, gobernanza y metodologías; estrategia de RH, cultura y gestión del talento.</span><span data-l="en">present · Portfolio, governance and methodologies; HR strategy, culture and talent management.</span></p></div>
+        <hr class="rule">
+        <div class="rv"><h4>Newton Labs — <span data-l="es">Director de programas y proyectos, PMO</span><span data-l="en">Director of programs and projects, PMO</span></h4><p class="muted mb0">2009 — 2026 · <span data-l="es">Portafolios con metodologías ágiles e híbridas, implementación de PMO y KPIs estratégicos. Incluye dirección de entrenamiento técnico en Módena, Italia (2018–2019) para automatización de almacenes de alta densidad.</span><span data-l="en">Portfolios with agile and hybrid methods, PMO implementation and strategic KPIs. Includes directing technical training in Modena, Italy (2018–2019) for high-density warehouse automation.</span></p></div>
+        <hr class="rule">
+        <div class="rv"><h4>Tecnológico de Monterrey — <span data-l="es">Red de Expertos y Banco Nacional de Talento Docente</span><span data-l="en">Expert Network and National Faculty Talent Bank</span></h4><p class="muted mb0">2025 — <span data-l="es">actualidad · Consultoría y mentoría en programas de emprendimiento e incubación; cuerpo docente elegible del Modelo Tec21.</span><span data-l="en">present · Consulting and mentoring in entrepreneurship and incubation programs; eligible faculty within the Tec21 Model.</span></p></div>
+        <hr class="rule">
+        <div class="rv"><h4>Universidad Tecnológica de Chihuahua — <span data-l="es">Profesor</span><span data-l="en">Professor</span></h4><p class="muted mb0">2013 — <span data-l="es">actualidad · Más de veinte asignaturas en informática, logística, gestión de proyectos, comunicación ejecutiva y habilidades profesionales. Desarrollo de material didáctico y capacitación docente.</span><span data-l="en">present · Over twenty courses across computing, logistics, project management, executive communication and professional skills. Instructional design and faculty training.</span></p></div>
+        <hr class="rule">
+        <div class="rv"><h4>EdwCorp — <span data-l="es">Fundador y CEO</span><span data-l="en">Founder & CEO</span></h4><p class="muted mb0">2023 — <span data-l="es">actualidad · Proyectos de educación y formación con tecnología avanzada, inteligencia artificial y valores humanos.</span><span data-l="en">present · Education and training projects combining advanced technology, artificial intelligence and human values.</span></p></div>
+        <hr class="rule">
+        <div class="rv"><h4>iogga — <span data-l="es">Fundador y CEO</span><span data-l="en">Founder & CEO</span></h4><p class="muted mb0">2021 — <span data-l="es">actualidad · Aplicación para crear planes y conectar personas con actividades y negocios locales.</span><span data-l="en">present · An app to create plans and connect people with local activities and businesses.</span></p></div>
+        <hr class="rule">
+        <div class="rv"><h4>CENALTEC — INADET — <span data-l="es">Instructor externo con registro STPS</span><span data-l="en">External instructor, STPS registered</span></h4><p class="muted mb0">2023 — <span data-l="es">actualidad · Cursos virtuales y presenciales; contenido formativo para radio, TV, YouTube y DVD.</span><span data-l="en">present · Virtual and in-person courses; training content for radio, TV, YouTube and DVD.</span></p></div>
+        <hr class="rule">
+        <div class="rv"><h4>Jabil Academy — <span data-l="es">Diseño curricular de programa académico</span><span data-l="en">Academic program curriculum design</span></h4><p class="muted mb0">2025 · <span data-l="es">Diseño y desarrollo de asignaturas para la industria, presencial y virtual, bajo enfoque por competencias.</span><span data-l="en">Course design and development for industry, in person and online, competency-based.</span></p></div>
+        <hr class="rule">
+        <div class="rv"><h4>Lightbourn Research — <span data-l="es">Director de comunicaciones</span><span data-l="en">Director of communications</span></h4><p class="muted mb0">2012 — 2016 · <span data-l="es">Divulgación científica en bio-nano-femto-fisiología vegetal disruptiva; comunicación interna, marca y vinculación académica.</span><span data-l="en">Science communication in disruptive bio-nano-femto plant physiology; internal communication, brand and academic outreach.</span></p></div>
+        <hr class="rule">
+        <div class="rv"><h4>Universidad La Salle Chihuahua — <span data-l="es">Catedrático · Presidente de la sociedad de alumnos</span><span data-l="en">Lecturer · Student body president</span></h4><p class="muted mb0">2007 — 2018 · <span data-l="es">Área económico-administrativa; antes, tres años dirigiendo la representación estudiantil.</span><span data-l="en">Economics and management faculty; earlier, three years leading student representation.</span></p></div>
+        <hr class="rule">
+        <div class="rv"><h4>NASA Space Apps · Conecta LATAM · CANACO · Coparmex</h4><p class="muted mb0"><span data-l="es">Mentoría a equipos de innovación desde 2013, investigación social y emprendimiento.</span><span data-l="en">Mentoring innovation teams since 2013, social research and entrepreneurship.</span></p></div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap">
-      <p class="pull rv"><span data-l="es">La calidad está en el producto. La excelencia está en las personas.</span><span data-l="en">Quality lives in the product. Excellence lives in people.</span></p>
-      <div class="btn-row rv">
-        <a class="btn" href="#/contacto"><span data-l="es">Solicitar una propuesta</span><span data-l="en">Request a proposal</span> <span class="arrow">→</span></a>
+<section class="section">
+    <div class="wrap grid g2">
+      <div class="sticky-side">
+        <p class="eyebrow"><span data-l="es">Formación</span><span data-l="en">Education</span></p>
+        <h2><span data-l="es">Qué he estudiado</span><span data-l="en">What I have studied</span></h2>
       </div>
+      <div class="stack">
+        <div class="rv"><h4><span data-l="es">Maestría en Diseño y Gestión de Proyectos Tecnológicos</span><span data-l="en">Master's in Design and Management of Technology Projects</span></h4><p class="muted mb0">Universidad Internacional de La Rioja (UNIR)</p></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">Especialista en Nuevas Tendencias de Gestión Estratégica de Proyectos Tecnológicos</span><span data-l="en">Specialist in New Trends in Strategic Technology Project Management</span></h4><p class="muted mb0">UNIR · <span data-l="es">Título propio europeo</span><span data-l="en">European institutional degree</span></p></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">Licenciatura en Comunicación Organizacional</span><span data-l="en">Bachelor's in Organizational Communication</span></h4><p class="muted mb0">Universidad La Salle Chihuahua</p></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">Técnico en Informática</span><span data-l="en">Technician in Computer Science</span></h4><p class="muted mb0">Instituto Chihuahuense de Informática (ICHI)</p></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">Certificaciones y diplomados</span><span data-l="en">Certifications and diplomas</span></h4>
+          <p class="muted mb0"><span data-l="es">Digital Project Manager (Universidad de Miami) · Business Analytics (Tec Milenio) · Emprendimiento STEM (Universidad Austral, IAE) · Pensamiento Sistémico (UNAM) · Auditoría, Evaluación y Legislación de Proyectos Tecnológicos (UNIR) · Soft Skills y Habilidades Directivas (UNIR) · Capacitador Experto y Consultor Experto (ICEMéxico) · Innovación STEAM y Liderazgo con Propósito (SEP) · Inglés B2 (UACH) · Educación Financiera (CONDUSEF) · Diplomado en ensamble vocal (Facultad de Bellas Artes, UACH)</span>
+            <span data-l="en">Digital Project Manager (University of Miami) · Business Analytics (Tec Milenio) · STEM Entrepreneurship (Universidad Austral, IAE) · Systems Thinking (UNAM) · Audit, Evaluation and Legislation of Technology Projects (UNIR) · Soft Skills and Management Abilities (UNIR) · Expert Trainer and Expert Consultant (ICEMéxico) · STEAM Innovation and Purpose-Driven Leadership (SEP) · English B2 (UACH) · Financial Education (CONDUSEF) · Vocal ensemble diploma (Fine Arts Faculty, UACH)</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="section">
+    <div class="wrap grid g2">
+      <figure class="wide rv">
+        <img src="assets/italia.jpg" alt="Edward H. H. en Italia" width="1080" height="999" loading="lazy">
+        <figcaption><span data-l="es">Módena, Italia · Dirección de entrenamiento técnico, 2018–2019</span><span data-l="en">Modena, Italy · Directing technical training, 2018–2019</span></figcaption>
+      </figure>
+      <figure class="wide rv">
+        <img src="assets/grupo-equipo.jpg" alt="Edward H. H. con un equipo de trabajo" width="1224" height="919" loading="lazy">
+        <figcaption><span data-l="es">Cierre de programa de formación corporativa</span><span data-l="en">Closing a corporate training program</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+<section class="section">
+    <div class="wrap grid g2">
+      <div class="sticky-side">
+        <p class="eyebrow"><span data-l="es">Principios de trabajo</span><span data-l="en">Working principles</span></p>
+        <h2><span data-l="es">Lo que sostiene cada proyecto que acepto</span><span data-l="en">What holds up every project I take</span></h2>
+      </div>
+      <div class="stack">
+        <div class="rv"><h4><span data-l="es">La calidad está en el producto; la excelencia, en las personas.</span><span data-l="en">Quality lives in the product; excellence lives in people.</span></h4></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">Todo se puede representar numéricamente para ser analizado y mejorado.</span><span data-l="en">Anything can be represented numerically to be analyzed and improved.</span></h4></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">La innovación es lo que ya está en el mercado, genera retorno y se sostiene en el tiempo. Lo demás es un experimento.</span><span data-l="en">Innovation is what is already in the market, generates return, and holds over time. The rest is an experiment.</span></h4></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">Para que algo sea válido, debe existir una evidencia válida.</span><span data-l="en">For something to be valid, valid evidence must exist.</span></h4></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">El orden del espacio de trabajo —físico o virtual— refleja la calidad de la persona y de la empresa.</span><span data-l="en">The order of a workspace — physical or virtual — reflects the quality of the person and the company.</span></h4></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">Es fácil complicar; es difícil simplificar. Lo verdaderamente intuitivo no necesita manual.</span><span data-l="en">Complicating is easy; simplifying is hard. What is truly intuitive needs no manual.</span></h4></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">El activo más importante es la confianza.</span><span data-l="en">The most important asset is trust.</span></h4></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">Las empresas se consolidan por dentro antes de expandirse.</span><span data-l="en">Companies consolidate internally before they expand.</span></h4></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">El servicio y la humildad son los distintivos de los niveles organizacionales más altos.</span><span data-l="en">Service and humility are the marks of the highest levels of an organization.</span></h4></div>
+        <hr class="rule">
+        <div class="rv"><h4><span data-l="es">El trabajo dignifica: impacta la vida de quien lo hace y la sociedad que lo recibe. Se asume con responsabilidad y respeto.</span><span data-l="en">Work dignifies: it shapes the life of whoever does it and the society that receives it. It is taken on with responsibility and respect.</span></h4></div>
+      </div>
+    </div>
+  </section>
+
+<section class="section">
+    <div class="wrap">
+      <p class="pull rv" style="max-width:26ch">
+        <span data-l="es">Todos los días se puede hacer algo para optimizar recursos. <em class="hl">Todos los días.</em></span>
+        <span data-l="en">Every day there is something you can do to optimize resources. <em class="hl">Every day.</em></span>
+      </p>
     </div>
   </section>
 </div>
 
 <!-- ══════════════════ PROYECTOS ══════════════════ -->
 <div class="route" data-route="proyectos">
-  <section class="section">
+<section class="section">
     <div class="wrap">
       <p class="eyebrow"><span data-l="es">Proyectos</span><span data-l="en">Ventures</span></p>
       <h1 style="max-width:14ch"><span data-l="es">Cosas que fundé porque hacían falta</span><span data-l="en">Things I founded because they were missing</span></h1>
@@ -1555,7 +1568,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <section class="section" style="padding-top:0; border-top:0">
+<section class="section" style="padding-top:0; border-top:0">
     <div class="wrap stack">
       <article class="rv">
         <hr class="rule" style="margin-bottom:30px">
@@ -1577,7 +1590,7 @@ figure.wide figcaption{
             </div>
           </div>
         </div>
-        <div class="grid g2" style="margin-top:clamp(28px,3.5vw,44px)">
+        <div class="grid g2 figrow" style="margin-top:clamp(28px,3.5vw,44px)">
           <figure class="wide rv">
             <img src="assets/iogga-escenario.jpg" alt="Presentación de iogga en escenario" width="1440" height="1440" loading="lazy">
             <figcaption><span data-l="es">Presentación de iogga ante público abierto</span><span data-l="en">Presenting iogga to a public audience</span></figcaption>
@@ -1623,7 +1636,7 @@ figure.wide figcaption{
             <p class="muted"><span data-l="es">Estilo derivado de tigre-grulla: formas chinas originales, combate deportivo, defensa personal, cultura y disciplina física. Entrenamiento e instrucción con linaje verificable, y la fuente directa de todo lo que enseño sobre presencia y atención en la empresa.</span>
                <span data-l="en">A tiger-crane derived style: original Chinese forms, sport combat, self-defense, culture and physical discipline. Training and instruction with a verifiable lineage — and the direct source of everything I teach about presence and attention in business.</span></p>
             <div class="btn-row" style="margin-top:20px">
-              <a class="btn ghost" href="#/kungfu" style="border-color:var(--jade); color:var(--jade)"><span data-l="es">Ver seminarios</span><span data-l="en">See seminars</span> <span class="arrow">→</span></a>
+              <a class="btn ghost" href="#/raiz" style="border-color:var(--jade); color:var(--jade)"><span data-l="es">Ver seminarios</span><span data-l="en">See seminars</span> <span class="arrow">→</span></a>
               <a class="btn ghost" href="https://www.instagram.com/omahkungfu/" target="_blank" rel="noopener" style="border-color:var(--jade); color:var(--jade)">@omahkungfu <span class="arrow">↗</span></a>
             </div>
           </div>
@@ -1634,9 +1647,84 @@ figure.wide figcaption{
   </section>
 </div>
 
-<!-- ══════════════════ KUNG FU ══════════════════ -->
-<div class="route jade" data-route="kungfu">
-  <section class="section">
+<!-- ══════════════════ RAIZ ══════════════════ -->
+<div class="route" data-route="raiz">
+<section class="section">
+    <div class="wrap">
+      <p class="eyebrow rv"><span data-l="es">La raíz</span><span data-l="en">The root</span></p>
+      <h2 class="rv" style="max-width:20ch">
+        <span data-l="es">Soy cristiano. Para mí, eso no es una religión.</span>
+        <span data-l="en">I am a Christian. To me, that is not a religion.</span>
+      </h2>
+
+      <div class="grid g2" style="margin-top:clamp(34px,4vw,56px); align-items:start">
+        <div class="prose rv" style="max-width:58ch">
+          <div data-l="es">
+            <p>Lo escribo aquí porque explica todo lo anterior: los principios con los que trabajo, la insistencia en la confianza como el activo más importante, la convicción de que una empresa se mide por lo que le hace a la gente que la sostiene.</p>
+
+            <p>Creo en Dios, y no creo que Dios haya dejado religiones. Dejó su Espíritu Santo, y dejó un ejemplo con nombre y con rostro: Jesucristo.</p>
+
+            <p>Cuando escribo <em>religión</em> con minúscula me refiero a lo que construyó el hombre: las estructuras, las marcas, las denominaciones, las sucursales, las disputas sobre quién tiene la razón. Pero sí creo en una <strong>Religión</strong> con mayúscula, y no la definí yo. Está escrita en una sola línea:</p>
+
+            <blockquote class="scripture">
+              <p>«La religión pura y verdadera a los ojos de Dios Padre consiste en ocuparse de los huérfanos y de las viudas en sus aflicciones, y no dejar que el mundo te corrompa.»</p>
+              <cite>Santiago 1:27 · Nueva Traducción Viviente</cite>
+            </blockquote>
+
+            <p>Esa Religión es la del amor, y tiene una vara de medir incómoda: no se mide en asistencia, ni en edificios, ni en discursos. Se mide en huérfanos atendidos y en viudas acompañadas.</p>
+
+            <p>Por eso no se trata de estar en la religión verdadera, sino en el Dios verdadero. Y hay una sola forma que conozco de verificarlo, y tampoco es doctrinal: es mirar el resultado. Si tu fe no te sirve para unir, para amar y para perdonar, entonces todavía no estás ahí. Una fe que separa se traicionó a sí misma.</p>
+
+            <h3>La comunidad de la que formo parte</h3>
+
+            <p>No tiene nombre, ni bandera, ni sucursales. Está en Chihuahua y en varias ciudades de la República, y guarda comunión con una gran iglesia en Chile y con hermanos en Argentina, en Miami y en otros países.</p>
+
+            <p>Nos reunimos en ese sentir y deliberadamente fuera de lo que el hombre le construyó encima a la fe: las marcas, las denominaciones, los negocios, las figuras públicas y quienes se enriquecen de ella.</p>
+
+            <p>Nada de esto me aleja de nadie; me obliga a lo contrario. Puedo sentarme, trabajar y tener comunión real con cualquier persona —crea lo que crea, o no crea nada— porque el amor no pide credenciales. En una sala de juntas a eso se le llama respeto. En mi vida se llama fe, y es la misma cosa.</p>
+          </div>
+
+          <div data-l="en">
+            <p>I write it here because it explains everything above: the principles I work by, the insistence on trust as the most important asset, the conviction that a company is measured by what it does to the people who hold it up.</p>
+
+            <p>I believe in God, and I do not believe God left religions behind. He left his Holy Spirit, and he left an example with a name and a face: Jesus Christ.</p>
+
+            <p>When I write <em>religion</em> in lowercase I mean what human beings built: the structures, the brands, the denominations, the branches, the arguments over who is right. But I do believe in a <strong>Religion</strong> with a capital letter, and I did not define it. It is written in a single line:</p>
+
+            <blockquote class="scripture">
+              <p>"Pure and genuine religion in the sight of God the Father means caring for orphans and widows in their distress and refusing to let the world corrupt you."</p>
+              <cite>James 1:27 · New Living Translation</cite>
+            </blockquote>
+
+            <p>That Religion is the religion of love, and it carries an uncomfortable measuring stick: it is not measured in attendance, or buildings, or speeches. It is measured in orphans cared for and widows accompanied.</p>
+
+            <p>So it is not about being in the true religion, but in the true God. And there is only one way I know to verify that, and it is not doctrinal either: look at the result. If your faith does not serve to unite, to love and to forgive, then you are not there yet. A faith that separates has already betrayed itself.</p>
+
+            <h3>The community I belong to</h3>
+
+            <p>It has no name, no flag and no branches. It is in Chihuahua and in several cities across Mexico, and it keeps communion with a large church in Chile and with brothers and sisters in Argentina, in Miami and in other countries.</p>
+
+            <p>We gather in that spirit and deliberately outside what people built on top of faith: the brands, the denominations, the businesses, the public figures, and those who grow rich from it.</p>
+
+            <p>None of this keeps me away from anyone; it obliges me to the opposite. I can sit down, work and be in real communion with any person — whatever they believe, or if they believe nothing at all — because love asks for no credentials. In a boardroom that is called respect. In my life it is called faith, and they are the same thing.</p>
+          </div>
+        </div>
+
+        <div class="sticky-side stack">
+          <figure class="wide rv" style="margin:0">
+            <img src="assets/comunidad.jpg" alt="Edward H. H. con hermanos de la comunidad" width="1224" height="642" loading="lazy">
+            <figcaption><span data-l="es">El amor no pide credenciales</span><span data-l="en">Love asks for no credentials</span></figcaption>
+          </figure>
+          <p class="note rv" style="margin:0">
+            <span data-l="es">Sin nombre, sin bandera, sin sucursales.</span>
+            <span data-l="en">No name, no flag, no branches.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="section jade">
     <div class="wrap">
       <img class="projlogo stacked" src="assets/logo-omah.png" alt="Logotipo de OMAH Kung Fu" width="460" height="460" loading="lazy" style="margin-bottom:24px">
       <p class="eyebrow">OMAH Kung Fu</p>
@@ -1653,7 +1741,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <section class="section" style="padding-top:0; border-top:0">
+<section class="section jade" style="padding-top:0; border-top:0">
     <div class="wrap">
       <figure class="wide rv">
         <img src="assets/kungfu-patada.jpg" alt="Edward H. H. ejecutando una patada alta" width="1224" height="810" loading="lazy">
@@ -1662,7 +1750,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <section class="section">
+<section class="section jade">
     <div class="wrap">
       <p class="eyebrow rv"><span data-l="es">Linaje directo, de maestro a maestro</span><span data-l="en">Direct lineage, master to master</span></p>
       <h2 class="rv" style="max-width:20ch; margin-bottom:clamp(32px,4vw,52px)">
@@ -1718,7 +1806,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <section class="section">
+<section class="section jade">
     <div class="wrap">
       <p class="eyebrow rv"><span data-l="es">Formación</span><span data-l="en">Training</span></p>
       <div class="grid g2" style="margin-top:30px">
@@ -1741,7 +1829,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <section class="section">
+<section class="section jade">
     <div class="wrap">
       <p class="eyebrow rv"><span data-l="es">Seminarios</span><span data-l="en">Seminars</span></p>
       <h2 class="rv" style="max-width:16ch"><span data-l="es">Lo que puedo impartir completo</span><span data-l="en">What I can teach end to end</span></h2>
@@ -1775,7 +1863,7 @@ figure.wide figcaption{
           <span class="tag"><span data-l="es">Empresas · Programa continuo</span><span data-l="en">Companies · Ongoing program</span></span>
         </article>
       </div>
-      <div class="grid g2" style="margin-top:clamp(38px,5vw,60px)">
+      <div class="grid g3 figrow" style="margin-top:clamp(38px,5vw,60px)">
         <figure class="wide rv">
           <img src="assets/kungfu-forma.jpg" alt="Práctica de formas de kung fu" width="1224" height="810" loading="lazy">
           <figcaption><span data-l="es">Formas chinas originales</span><span data-l="en">Original Chinese forms</span></figcaption>
@@ -1801,131 +1889,64 @@ figure.wide figcaption{
       </div>
     </div>
   </section>
-</div>
 
-<!-- ══════════════════ BIOGRAFÍA ══════════════════ -->
-<div class="route" data-route="biografia">
-  <section class="section">
-    <div class="wrap grid g2" style="align-items:center">
-      <div>
-        <p class="eyebrow"><span data-l="es">Biografía</span><span data-l="en">Biography</span></p>
-        <h1><span data-l="es">Omar Eduardo Hernández Hernández</span><span data-l="en">Omar Eduardo Hernández Hernández</span></h1>
-        <p class="lead" style="margin-top:28px">
-          <span data-l="es">Máster y especialista en dirección de proyectos tecnológicos. Licenciado en comunicación organizacional. Técnico en informática. Quince años liderando equipos e iniciativas en tecnología, educación superior y desarrollo empresarial, con proyectos de implementación en América y Europa. Chihuahua, México.</span>
-          <span data-l="en">Master's degree and specialist in technology project management. Bachelor's in organizational communication. Technician in computer science. Fifteen years leading teams and initiatives across technology, higher education and business development, with implementation projects in the Americas and Europe. Chihuahua, Mexico.</span>
-        </p>
-      </div>
-      <figure class="portrait rv" style="margin:0">
-        <img src="assets/retrato.jpg" alt="Retrato de Edward H. H." width="1100" height="1375" loading="lazy">
-      </figure>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap grid g2">
-      <div class="sticky-side">
-        <p class="eyebrow"><span data-l="es">Trayectoria</span><span data-l="en">Career</span></p>
-        <h2><span data-l="es">Dónde he estado</span><span data-l="en">Where I have been</span></h2>
-      </div>
-      <div class="stack">
-        <div class="rv"><h4>Axys Global — <span data-l="es">Jefe de la oficina de gestión de proyectos (EPMO)</span><span data-l="en">Head of the Enterprise PMO</span></h4><p class="muted mb0">2026 — <span data-l="es">actualidad · Portafolio, gobernanza y metodologías; estrategia de RH, cultura y gestión del talento.</span><span data-l="en">present · Portfolio, governance and methodologies; HR strategy, culture and talent management.</span></p></div>
-        <hr class="rule">
-        <div class="rv"><h4>Newton Labs — <span data-l="es">Director de programas y proyectos, PMO</span><span data-l="en">Director of programs and projects, PMO</span></h4><p class="muted mb0">2009 — 2026 · <span data-l="es">Portafolios con metodologías ágiles e híbridas, implementación de PMO y KPIs estratégicos. Incluye dirección de entrenamiento técnico en Módena, Italia (2018–2019) para automatización de almacenes de alta densidad.</span><span data-l="en">Portfolios with agile and hybrid methods, PMO implementation and strategic KPIs. Includes directing technical training in Modena, Italy (2018–2019) for high-density warehouse automation.</span></p></div>
-        <hr class="rule">
-        <div class="rv"><h4>Tecnológico de Monterrey — <span data-l="es">Red de Expertos y Banco Nacional de Talento Docente</span><span data-l="en">Expert Network and National Faculty Talent Bank</span></h4><p class="muted mb0">2025 — <span data-l="es">actualidad · Consultoría y mentoría en programas de emprendimiento e incubación; cuerpo docente elegible del Modelo Tec21.</span><span data-l="en">present · Consulting and mentoring in entrepreneurship and incubation programs; eligible faculty within the Tec21 Model.</span></p></div>
-        <hr class="rule">
-        <div class="rv"><h4>Universidad Tecnológica de Chihuahua — <span data-l="es">Profesor</span><span data-l="en">Professor</span></h4><p class="muted mb0">2013 — <span data-l="es">actualidad · Más de veinte asignaturas en informática, logística, gestión de proyectos, comunicación ejecutiva y habilidades profesionales. Desarrollo de material didáctico y capacitación docente.</span><span data-l="en">present · Over twenty courses across computing, logistics, project management, executive communication and professional skills. Instructional design and faculty training.</span></p></div>
-        <hr class="rule">
-        <div class="rv"><h4>EdwCorp — <span data-l="es">Fundador y CEO</span><span data-l="en">Founder & CEO</span></h4><p class="muted mb0">2023 — <span data-l="es">actualidad · Proyectos de educación y formación con tecnología avanzada, inteligencia artificial y valores humanos.</span><span data-l="en">present · Education and training projects combining advanced technology, artificial intelligence and human values.</span></p></div>
-        <hr class="rule">
-        <div class="rv"><h4>iogga — <span data-l="es">Fundador y CEO</span><span data-l="en">Founder & CEO</span></h4><p class="muted mb0">2021 — <span data-l="es">actualidad · Aplicación para crear planes y conectar personas con actividades y negocios locales.</span><span data-l="en">present · An app to create plans and connect people with local activities and businesses.</span></p></div>
-        <hr class="rule">
-        <div class="rv"><h4>CENALTEC — INADET — <span data-l="es">Instructor externo con registro STPS</span><span data-l="en">External instructor, STPS registered</span></h4><p class="muted mb0">2023 — <span data-l="es">actualidad · Cursos virtuales y presenciales; contenido formativo para radio, TV, YouTube y DVD.</span><span data-l="en">present · Virtual and in-person courses; training content for radio, TV, YouTube and DVD.</span></p></div>
-        <hr class="rule">
-        <div class="rv"><h4>Jabil Academy — <span data-l="es">Diseño curricular de programa académico</span><span data-l="en">Academic program curriculum design</span></h4><p class="muted mb0">2025 · <span data-l="es">Diseño y desarrollo de asignaturas para la industria, presencial y virtual, bajo enfoque por competencias.</span><span data-l="en">Course design and development for industry, in person and online, competency-based.</span></p></div>
-        <hr class="rule">
-        <div class="rv"><h4>Lightbourn Research — <span data-l="es">Director de comunicaciones</span><span data-l="en">Director of communications</span></h4><p class="muted mb0">2012 — 2016 · <span data-l="es">Divulgación científica en bio-nano-femto-fisiología vegetal disruptiva; comunicación interna, marca y vinculación académica.</span><span data-l="en">Science communication in disruptive bio-nano-femto plant physiology; internal communication, brand and academic outreach.</span></p></div>
-        <hr class="rule">
-        <div class="rv"><h4>Universidad La Salle Chihuahua — <span data-l="es">Catedrático · Presidente de la sociedad de alumnos</span><span data-l="en">Lecturer · Student body president</span></h4><p class="muted mb0">2007 — 2018 · <span data-l="es">Área económico-administrativa; antes, tres años dirigiendo la representación estudiantil.</span><span data-l="en">Economics and management faculty; earlier, three years leading student representation.</span></p></div>
-        <hr class="rule">
-        <div class="rv"><h4>NASA Space Apps · Conecta LATAM · CANACO · Coparmex</h4><p class="muted mb0"><span data-l="es">Mentoría a equipos de innovación desde 2013, investigación social y emprendimiento.</span><span data-l="en">Mentoring innovation teams since 2013, social research and entrepreneurship.</span></p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap grid g2">
-      <div class="sticky-side">
-        <p class="eyebrow"><span data-l="es">Formación</span><span data-l="en">Education</span></p>
-        <h2><span data-l="es">Qué he estudiado</span><span data-l="en">What I have studied</span></h2>
-      </div>
-      <div class="stack">
-        <div class="rv"><h4><span data-l="es">Maestría en Diseño y Gestión de Proyectos Tecnológicos</span><span data-l="en">Master's in Design and Management of Technology Projects</span></h4><p class="muted mb0">Universidad Internacional de La Rioja (UNIR)</p></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">Especialista en Nuevas Tendencias de Gestión Estratégica de Proyectos Tecnológicos</span><span data-l="en">Specialist in New Trends in Strategic Technology Project Management</span></h4><p class="muted mb0">UNIR · <span data-l="es">Título propio europeo</span><span data-l="en">European institutional degree</span></p></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">Licenciatura en Comunicación Organizacional</span><span data-l="en">Bachelor's in Organizational Communication</span></h4><p class="muted mb0">Universidad La Salle Chihuahua</p></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">Técnico en Informática</span><span data-l="en">Technician in Computer Science</span></h4><p class="muted mb0">Instituto Chihuahuense de Informática (ICHI)</p></div>
-        <hr class="rule">
-        <div class="rv"><h4><span data-l="es">Certificaciones y diplomados</span><span data-l="en">Certifications and diplomas</span></h4>
-          <p class="muted mb0"><span data-l="es">Digital Project Manager (Universidad de Miami) · Business Analytics (Tec Milenio) · Emprendimiento STEM (Universidad Austral, IAE) · Pensamiento Sistémico (UNAM) · Auditoría, Evaluación y Legislación de Proyectos Tecnológicos (UNIR) · Soft Skills y Habilidades Directivas (UNIR) · Capacitador Experto y Consultor Experto (ICEMéxico) · Innovación STEAM y Liderazgo con Propósito (SEP) · Inglés B2 (UACH) · Educación Financiera (CONDUSEF) · Diplomado en ensamble vocal (Facultad de Bellas Artes, UACH)</span>
-            <span data-l="en">Digital Project Manager (University of Miami) · Business Analytics (Tec Milenio) · STEM Entrepreneurship (Universidad Austral, IAE) · Systems Thinking (UNAM) · Audit, Evaluation and Legislation of Technology Projects (UNIR) · Soft Skills and Management Abilities (UNIR) · Expert Trainer and Expert Consultant (ICEMéxico) · STEAM Innovation and Purpose-Driven Leadership (SEP) · English B2 (UACH) · Financial Education (CONDUSEF) · Vocal ensemble diploma (Fine Arts Faculty, UACH)</span></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap grid g2">
-      <figure class="wide rv">
-        <img src="assets/italia.jpg" alt="Edward H. H. en Italia" width="1080" height="999" loading="lazy">
-        <figcaption><span data-l="es">Módena, Italia · Dirección de entrenamiento técnico, 2018–2019</span><span data-l="en">Modena, Italy · Directing technical training, 2018–2019</span></figcaption>
-      </figure>
-      <figure class="wide rv">
-        <img src="assets/grupo-equipo.jpg" alt="Edward H. H. con un equipo de trabajo" width="1224" height="919" loading="lazy">
-        <figcaption><span data-l="es">Cierre de programa de formación corporativa</span><span data-l="en">Closing a corporate training program</span></figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- fuera del escenario -->
   <section class="section">
     <div class="wrap">
       <p class="eyebrow rv"><span data-l="es">Fuera del escenario</span><span data-l="en">Off stage</span></p>
       <h2 class="rv" style="max-width:20ch"><span data-l="es">Lo que me sostiene cuando no estoy trabajando</span><span data-l="en">What holds me up when I am not working</span></h2>
-      <div class="grid g3" style="margin-top:44px">
+
+      <div class="grid g2" style="margin-top:44px">
         <div class="rv">
           <h3 style="margin-bottom:14px"><span data-l="es">Las plantas</span><span data-l="en">Plants</span></h3>
           <p class="muted"><span data-l="es">Cuidar algo que crece a su propio ritmo, que no responde a la urgencia y que castiga la prisa. Es el mejor entrenamiento que conozco contra la impaciencia ejecutiva — y, no por casualidad, pasé cuatro años comunicando investigación en fisiología vegetal.</span>
              <span data-l="en">Caring for something that grows at its own pace, ignores urgency, and punishes haste. It is the best training I know against executive impatience — and, not by coincidence, I spent four years communicating plant physiology research.</span></p>
         </div>
         <div class="rv">
-          <h3 style="margin-bottom:14px"><span data-l="es">La guitarra</span><span data-l="en">The guitar</span></h3>
-          <p class="muted"><span data-l="es">Toco. Y escucho Radiohead como quien estudia un caso: una banda que decidió destruir su propia fórmula justo cuando funcionaba. Casi todo lo que creo sobre reinventarse antes de que te obliguen lo aprendí de ese disco que nadie entendió el primer año.</span>
-             <span data-l="en">I play. And I listen to Radiohead the way you study a case: a band that chose to destroy its own formula exactly when it was working. Almost everything I believe about reinventing yourself before you are forced to, I learned from that record nobody understood the first year.</span></p>
-          <figure class="wide rv" style="margin:18px 0 0; max-width:260px">
+          <h3 style="margin-bottom:14px"><span data-l="es">La música</span><span data-l="en">Music</span></h3>
+          <p class="muted"><span data-l="es">Toco la guitarra y compongo. Escucho Radiohead como quien estudia un caso: una banda que decidió destruir su propia fórmula justo cuando funcionaba. Casi todo lo que creo sobre reinventarse antes de que te obliguen lo aprendí de ese disco que nadie entendió el primer año.</span>
+             <span data-l="en">I play guitar and I write songs. I listen to Radiohead the way you study a case: a band that chose to destroy its own formula exactly when it was working. Almost everything I believe about reinventing yourself before you are forced to, I learned from that record nobody understood the first year.</span></p>
+          <figure class="wide rv" style="margin:20px 0 0; max-width:240px">
             <img src="assets/musica.jpg" alt="Edward H. H. tocando música" width="206" height="206" loading="lazy">
           </figure>
         </div>
-        <div class="rv">
-          <h3 style="margin-bottom:14px"><span data-l="es">El kung fu</span><span data-l="en">Kung fu</span></h3>
-          <p class="muted"><span data-l="es">Veinte años de práctica, cinta negra y años enseñando. No es disciplina para pelear: es disciplina para no reaccionar. Ahí aprendí lo que después traduje a la sala de juntas.</span>
-             <span data-l="en">Twenty years of practice, a black belt and years of teaching. It is not discipline for fighting: it is discipline for not reacting. That is where I learned what I later translated into the boardroom.</span></p>
-          <p style="margin-top:14px"><a class="back" style="margin:0" href="#/kungfu"><span data-l="es">Ver seminarios</span><span data-l="en">See seminars</span> →</a></p>
-        </div>
       </div>
-      <p class="note rv" style="margin-top:clamp(34px,4vw,54px)">
-        <span data-l="es">Y una raíz más honda que las tres: <a href="#/vision" style="color:var(--brass)">mi fe</a>.</span>
-        <span data-l="en">And one root deeper than all three: <a href="#/vision" style="color:var(--brass)">my faith</a>.</span>
-      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow rv"><span data-l="es">Escuchar y ver</span><span data-l="en">Listen and watch</span></p>
+      <h2 class="rv" style="max-width:22ch"><span data-l="es">Canciones, conversaciones y una entrevista</span><span data-l="en">Songs, conversations and an interview</span></h2>
+
+      <div class="index-list" style="margin-top:44px">
+        <a class="index-item" href="https://youtu.be/eGaYTJUS8E4" target="_blank" rel="noopener">
+          <span class="n">001</span>
+          <span class="t"><span data-l="es">Canción para la comunidad<small>Composición propia, cantada en las reuniones.</small></span><span data-l="en">A song for the community<small>My own composition, sung at our gatherings.</small></span></span>
+          <span class="m"><span data-l="es">Música ↗</span><span data-l="en">Music ↗</span></span>
+        </a>
+        <a class="index-item" href="https://youtu.be/oy0Qv-1qP3A" target="_blank" rel="noopener">
+          <span class="n">002</span>
+          <span class="t"><span data-l="es">Segunda canción<small>Composición propia.</small></span><span data-l="en">Second song<small>My own composition.</small></span></span>
+          <span class="m"><span data-l="es">Música ↗</span><span data-l="en">Music ↗</span></span>
+        </a>
+        <a class="index-item" href="https://www.youtube.com/@hermanosenchihuahua3287/streams" target="_blank" rel="noopener">
+          <span class="n">003</span>
+          <span class="t"><span data-l="es">Conversaciones con hermanos<small>Transmisiones abiertas, sin guion y sin producción: hablar de fe entre amigos.</small></span><span data-l="en">Conversations with brothers<small>Open broadcasts, unscripted and unproduced: talking about faith among friends.</small></span></span>
+          <span class="m"><span data-l="es">Canal ↗</span><span data-l="en">Channel ↗</span></span>
+        </a>
+        <a class="index-item" href="https://www.youtube.com/watch?v=uYrM39l7twM" target="_blank" rel="noopener">
+          <span class="n">004</span>
+          <span class="t"><span data-l="es">Entrevista<small>Conversación en un canal cristiano sobre fe, trabajo y propósito.</small></span><span data-l="en">Interview<small>A conversation on a Christian channel about faith, work and purpose.</small></span></span>
+          <span class="m"><span data-l="es">Video ↗</span><span data-l="en">Video ↗</span></span>
+        </a>
+      </div>
     </div>
   </section>
 </div>
 
 <!-- ══════════════════ CONTACTO ══════════════════ -->
 <div class="route" data-route="contacto">
-  <section class="section">
+<section class="section">
     <div class="wrap">
       <p class="eyebrow"><span data-l="es">Contacto</span><span data-l="en">Contact</span></p>
       <h1 style="max-width:14ch"><span data-l="es">Empecemos por la conversación difícil.</span><span data-l="en">Let's start with the difficult conversation.</span></h1>
@@ -1936,7 +1957,7 @@ figure.wide figcaption{
     </div>
   </section>
 
-  <section class="section">
+<section class="section">
     <div class="wrap grid g2">
       <div>
         <p class="eyebrow rv"><span data-l="es">Directo</span><span data-l="en">Direct</span></p>
@@ -2023,6 +2044,12 @@ figure.wide figcaption{
 
 </main>
 
+<a class="wafloat" href="https://wa.me/526142168738?text=Hola%20Edward%2C%20vi%20tu%20sitio%20y%20me%20gustar%C3%ADa%20platicar%20contigo."
+   target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.86 1.22 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm0 18.13h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.23 8.23 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.25 8.24z"/></svg>
+  <span class="lbl"><span data-l="es">Escríbeme</span><span data-l="en">Message me</span></span>
+</a>
+
 <!-- ══════════════════ PIE ══════════════════ -->
 <footer class="footer">
   <div class="wrap">
@@ -2035,17 +2062,14 @@ figure.wide figcaption{
         </p>
       </div>
       <nav class="footer-nav" aria-label="Pie">
-        <a href="#/vision"><span data-l="es">Visión</span><span data-l="en">Vision</span></a>
-        <a href="#/futuro"><span data-l="es">Futuro</span><span data-l="en">Future</span></a>
+        <a href="#/servicios"><span data-l="es">Servicios</span><span data-l="en">Services</span></a>
         <a href="#/ideas">Ideas</a>
-        <a href="#/conferencias"><span data-l="es">Conferencias</span><span data-l="en">Speaking</span></a>
-        <a href="#/docencia"><span data-l="es">Docencia</span><span data-l="en">Teaching</span></a>
-        <a href="#/consultoria"><span data-l="es">Consultoría</span><span data-l="en">Consulting</span></a>
+        <a href="#/trayectoria"><span data-l="es">Trayectoria</span><span data-l="en">Track record</span></a>
         <a href="#/proyectos"><span data-l="es">Proyectos</span><span data-l="en">Ventures</span></a>
-        <a href="#/kungfu">Kung Fu</a>
-        <a href="#/biografia"><span data-l="es">Biografía</span><span data-l="en">Biography</span></a>
+        <a href="#/raiz"><span data-l="es">La raíz</span><span data-l="en">The root</span></a>
         <a href="#/contacto"><span data-l="es">Contacto</span><span data-l="en">Contact</span></a>
         <a href="https://www.linkedin.com/in/omareduardohh/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://www.instagram.com/omahkungfu/" target="_blank" rel="noopener">Instagram ↗</a>
       </nav>
     </div>
     <div class="footer-bottom">
@@ -2091,18 +2115,14 @@ figure.wide figcaption{
 
   var TITLES = {
     "inicio":                  ["Edward H. H. — Futurista, consultor y comunicador", "Edward H. H. — Futurist, consultant and communicator"],
-    "vision":                  ["Visión — Edward H. H.", "Vision — Edward H. H."],
-    "futuro":                  ["Prospectiva — Edward H. H.", "Foresight — Edward H. H."],
+    "servicios":               ["Servicios — Edward H. H.", "Services — Edward H. H."],
+    "ideas":                   ["Ideas y prospectiva — Edward H. H.", "Ideas and foresight — Edward H. H."],
     "futuro/tres-relojes":     ["La teoría de los tres relojes — Edward H. H.", "The theory of the three clocks — Edward H. H."],
     "futuro/decada-atencion":  ["La década de la atención — Edward H. H.", "The attention decade — Edward H. H."],
     "futuro/regreso-del-oficio":["El regreso del oficio — Edward H. H.", "The return of craft — Edward H. H."],
-    "ideas":                   ["Ideas — Edward H. H.", "Ideas — Edward H. H."],
-    "conferencias":            ["Conferencias y talleres — Edward H. H.", "Speaking & workshops — Edward H. H."],
-    "docencia":                ["Docencia — Edward H. H.", "Teaching — Edward H. H."],
-    "consultoria":             ["Consultoría — Edward H. H.", "Consulting — Edward H. H."],
+    "trayectoria":             ["Trayectoria — Edward H. H.", "Track record — Edward H. H."],
     "proyectos":               ["Proyectos — Edward H. H.", "Ventures — Edward H. H."],
-    "kungfu":                  ["Kung Fu — Edward H. H.", "Kung Fu — Edward H. H."],
-    "biografia":               ["Biografía — Edward H. H.", "Biography — Edward H. H."],
+    "raiz":                    ["La raíz — Edward H. H.", "The root — Edward H. H."],
     "contacto":                ["Contacto — Edward H. H.", "Contact — Edward H. H."]
   };
   function setTitle(r){
@@ -2169,8 +2189,10 @@ figure.wide figcaption{
   var creds = ["Tecnológico de Monterrey","UNIR","Universidad La Salle","NASA Space Apps","CENALTEC · STPS",
                "Axys Global","Newton Labs · Italia","Jabil Academy","CANACO","Conecta LATAM","UTCH","Coparmex"];
   var track = document.getElementById("credtrack");
-  var html = creds.map(function(c){ return "<span>" + c + "</span>"; }).join("");
-  track.innerHTML = html + html; // duplicado para bucle continuo
+  if (track){
+    var html = creds.map(function(c){ return "<span>" + c + "</span>"; }).join("");
+    track.innerHTML = html + html; // duplicado para bucle continuo
+  }
 
   /* ---------------- formulario ---------------- */
   var WA = "526142168738";
@@ -2197,12 +2219,13 @@ figure.wide figcaption{
   }
 
   var form = document.getElementById("brief");
-  form.addEventListener("submit", function(e){
+  if (form) form.addEventListener("submit", function(e){
     e.preventDefault();
     var c = compose();
     window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(c.body), "_blank", "noopener");
   });
-  document.getElementById("sendmail").addEventListener("click", function(){
+  var mailBtn = document.getElementById("sendmail");
+  if (mailBtn) mailBtn.addEventListener("click", function(){
     var c = compose();
     window.location.href = "mailto:" + MAIL + "?subject=" + encodeURIComponent(c.subject) + "&body=" + encodeURIComponent(c.body);
   });

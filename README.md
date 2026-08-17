@@ -39,12 +39,14 @@ python3 build-single.py
 
 ### Secciones
 
-`#/inicio` · `#/vision` (incluye «La raíz») · `#/futuro` (+ 3 artículos) · `#/ideas` ·
-`#/conferencias` · `#/docencia` · `#/consultoria` · `#/proyectos` ·
-`#/kungfu` · `#/biografia` · `#/contacto`
+`#/inicio` · `#/servicios` · `#/ideas` · `#/trayectoria` · `#/proyectos` ·
+`#/raiz` · `#/contacto`
 
-`#/conferencias` incluye el catálogo completo: 70 temas en cinco áreas.
-`#/docencia` incluye 23 asignaturas de nivel superior en tres áreas.
+Más tres rutas de ensayo: `#/futuro/tres-relojes`, `#/futuro/decada-atencion`
+y `#/futuro/regreso-del-oficio`.
+
+`#/servicios` reúne conferencias (catálogo de 70 temas), consultoría y docencia.
+`#/raiz` reúne fe, kung fu, música y plantas.
 
 ---
 

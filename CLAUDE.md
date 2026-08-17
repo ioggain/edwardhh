@@ -38,10 +38,25 @@ publica con GitHub Pages desde la rama `main`.
 
 ## Secciones
 
-`#/inicio` · `#/vision` (incluye «La raíz», su fe) · `#/futuro` (+3 ensayos) ·
-`#/ideas` · `#/conferencias` (catálogo de 70 temas) · `#/docencia`
-(23 asignaturas) · `#/consultoria` · `#/proyectos` · `#/kungfu` ·
-`#/biografia` · `#/contacto`
+Seis apartados, en este orden y con este peso deliberado:
+
+| Ruta | Qué contiene | Peso |
+|---|---|---|
+| `#/inicio` | Portada, tesis, tríada del diferenciador, credenciales | — |
+| `#/servicios` | Conferencias (catálogo de 70 temas), consultoría y docencia | 30 % |
+| `#/ideas` | Tesis de la traducción, 3 ensayos de prospectiva, cuaderno de ideas | 30 % |
+| `#/trayectoria` | Carrera, formación, certificaciones y principios de trabajo | 20 % |
+| `#/proyectos` | iogga, EdwCorp, OMAH Kung Fu | 10 % |
+| `#/raiz` | Fe, kung fu, música, plantas | 10 % |
+| `#/contacto` | WhatsApp, correo, LinkedIn y formulario | — |
+
+Los ensayos viven en rutas propias (`#/futuro/tres-relojes`,
+`#/futuro/decada-atencion`, `#/futuro/regreso-del-oficio`) y regresan a
+`#/ideas`.
+
+**No volver a multiplicar los apartados.** Él pidió expresamente menos
+secciones: su filosofía es que lo verdaderamente intuitivo no necesita manual.
+Antes de crear una ruta nueva, buscar dónde encaja en las seis existentes.
 
 ## Tono y contenido
 
