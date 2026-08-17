@@ -257,6 +257,8 @@ em.hl{ font-style:italic; color:var(--brass); }
 .credbar:hover .credtrack{ animation-play-state:paused; }
 @keyframes slide{ to{ transform:translateX(-50%); } }
 @media (prefers-reduced-motion: reduce){ .credtrack{ animation:none; } }
+.credtrack .dup{ display:inline-flex; padding:0; }
+.credtrack .dup::after{ content:none; }
 .credtrack span{
   font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase;
   color:var(--ink-3); padding-inline:26px; white-space:nowrap;
@@ -571,7 +573,7 @@ figure.wide figcaption{
       </div>
 
       <figure class="portrait rv" style="margin:0">
-        <img src="assets/retrato.jpg" alt="Retrato de Edward H. H." width="1100" height="1375">
+        <img src="assets/retrato.jpg" alt="Retrato de estudio en blanco y negro" width="1100" height="1375">
         <figcaption>Omar Eduardo Hernández Hernández · Chihuahua, México</figcaption>
       </figure>
     </div>
@@ -610,7 +612,7 @@ figure.wide figcaption{
         </div>
         <div class="item rv">
           <span class="num">03 — <span data-l="es">Comunicación</span><span data-l="en">Communication</span></span>
-          <h3><span data-l="es">Convierto ideas complejas en ideas que mueven</span><span data-l="en">I turn complex ideas into ideas that move people</span></h3>
+          <h3><span data-l="es">Convierto lo complejo en algo que mueve</span><span data-l="en">I turn the complex into something that moves people</span></h3>
           <p class="muted">
             <span data-l="es">Licenciado en comunicación organizacional, conductor de radio y televisión, docente y mentor. Una idea que no se entiende no existe. Mi oficio es que la entienda el consejo, el técnico y el becario en la misma sala.</span>
             <span data-l="en">A degree in organizational communication, work in radio and television, teaching and mentoring. An idea that is not understood does not exist. My craft is making the board, the engineer and the intern understand it in the same room.</span>
@@ -1450,7 +1452,7 @@ figure.wide figcaption{
         </p>
       </div>
       <figure class="portrait rv" style="margin:0">
-        <img src="assets/retrato.jpg" alt="Retrato de Edward H. H." width="1100" height="1375" loading="lazy">
+        <img src="assets/retrato.jpg" alt="Retrato de estudio en blanco y negro" width="1100" height="1375" loading="lazy">
       </figure>
     </div>
   </section>
@@ -2199,7 +2201,9 @@ figure.wide figcaption{
   var track = document.getElementById("credtrack");
   if (track){
     var html = creds.map(function(c){ return "<span>" + c + "</span>"; }).join("");
-    track.innerHTML = html + html; // duplicado para bucle continuo
+    // La segunda copia solo existe para que el bucle no tenga costura.
+    // Se oculta a lectores de pantalla y buscadores para no leer la lista dos veces.
+    track.innerHTML = html + '<span class="dup" aria-hidden="true">' + html + "</span>";
   }
 
   /* ---------------- formulario ---------------- */
