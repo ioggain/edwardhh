@@ -56,6 +56,18 @@ organización camina, la persona respira).
 La sección «La raíz» declara su fe cristiana como algo que **une y no separa**.
 Al tocarla, mantener ese tono: firme, sin predicar, sin excluir a nadie.
 
+Distinción que él pide sostener siempre: **religión** con minúscula es lo que
+construyó el hombre (estructuras, marcas, denominaciones, sucursales);
+**Religión** con mayúscula es la del amor, definida en Santiago 1:27. Pertenece
+a una comunidad cristiana sin nombre, sin bandera y sin sucursales, en Chihuahua
+y en México, en comunión con una iglesia en Chile y con hermanos en Argentina,
+Miami y otros países. No mencionar denominaciones ni figuras públicas.
+
+**Kung Fu:** el linaje que aparece en `#/kungfu` es real y verificable
+(Ed Parker y James Wing Woo → James Ibrao → Ever Chaparro Mendoza →
+Dr. José Guadalupe Becerril López → Edward). No inventar grados ni fechas.
+Instagram del proyecto: https://www.instagram.com/omahkungfu/
+
 ## Datos de contacto
 
 - WhatsApp **+52 614 216 8738** → `wa.me/526142168738`

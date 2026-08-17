@@ -118,18 +118,19 @@ proveedor elegido.
 | `retrato.jpg` | Portada y biografía — retrato de estudio |
 | `escenario-reloj.jpg` | Portada, bloque de la tesis |
 | `panel-visionarios.jpg` | Ideas |
+| `logo-omah.png` | Kung Fu y Proyectos |
 | `kungfu-patada.jpg` | Kung Fu, apertura |
-| `kungfu-forma.jpg`, `kungfu-duo.jpg` | Kung Fu, seminarios |
+| `kungfu-forma.jpg`, `kungfu-duo.jpg`, `kungfu-campo.jpg`, `kungfu-bruce.jpg` | Kung Fu, seminarios |
 | `logo-iogga.png`, `logo-edwcorp.png` | Proyectos, marcas |
 | `iogga-escenario.jpg`, `iogga-pitch.jpg` | Proyectos, bloque de iogga |
-| `taller-herradura.jpg` | Conferencias, catálogo completo |
+| `taller-herradura.jpg` | Conferencias, catálogo |
 | `taller-lasalle.jpg` | Conferencias, formatos |
 | `consejo-inndech.jpg` | Conferencias, apertura |
-| `sala-juntas.jpg`, `aula-grupo.jpg` | Docencia, apertura |
-| `taller-cerca.jpg` | Docencia, asignaturas |
+| `sala-juntas.jpg`, `aula-grupo.jpg`, `taller-cerca.jpg` | Docencia |
 | `italia.jpg`, `grupo-equipo.jpg` | Biografía |
+| `musica.jpg` | Biografía, «Fuera del escenario» |
 | `comunidad.jpg` | Visión, sección «La raíz» |
-| `aula-mesa.jpg`, `taller-sala.jpg`, `start-why.jpg`, `spaceapps.jpg` | Disponibles, sin colocar |
+| `aula-mesa.jpg`, `taller-sala.jpg`, `start-why.jpg`, `spaceapps.jpg`, `kungfu-saludo.jpg`, `kungfu-bn.jpg`, `podio.jpg` | Disponibles, sin colocar |
 
 ### Cómo mandar fotos nuevas
 
