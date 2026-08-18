@@ -68,6 +68,25 @@ Su diferenciador declarado es **visión + experiencia + comunicación**, y su
 tesis propia es **la teoría de los tres relojes** (la tecnología corre, la
 organización camina, la persona respira).
 
+### Regla de voz: humildad (obligatoria)
+
+Él pidió expresamente que **no se note presunción en ningún texto**. La regla
+es pasar del *yo hago* al *el oficio consiste en*:
+
+- Los titulares van en **infinitivo**, no en primera persona:
+  «Ejecutar, no sólo opinar», no «He ejecutado».
+- Las capacidades se enuncian de forma **impersonal**: «se diseña», «ahí se
+  aprende», «el oficio consiste en», «de ahí salen los seminarios».
+- Nada de compararse con otros ni de descalificarlos: se dice «el oficio no
+  consiste en repetir informes de consultoras», no «yo no repito informes».
+- Los logros se enuncian como **hechos verificables**, no como méritos:
+  fechas, instituciones, grados, cargos. El dato habla solo.
+- **Excepción:** en los ensayos de `#/futuro/*` y en la sección «La raíz» la
+  primera persona sí es natural, porque ahí escribe y confiesa, no se vende.
+
+Antes de dar por buena una frase nueva, leerla en voz alta: si suena a que
+está presumiendo, se reescribe.
+
 La sección «La raíz» declara su fe cristiana como algo que **une y no separa**.
 Al tocarla, mantener ese tono: firme, sin predicar, sin excluir a nadie.
 
