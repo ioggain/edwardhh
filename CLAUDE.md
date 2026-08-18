@@ -102,6 +102,22 @@ Miami y otros países. No mencionar denominaciones ni figuras públicas.
 Dr. José Guadalupe Becerril López → Edward). No inventar grados ni fechas.
 Instagram del proyecto: https://www.instagram.com/omahkungfu/
 
+## Marca
+
+El logotipo es un monograma de dos **H** giradas 45° y entrelazadas
+(Hernández Hernández), acompañado del wordmark «edwardhh».
+
+- `assets/logo-edwardhh.png` — lockup completo. Va en la barra superior y
+  lleva al inicio. **Decisión del cliente:** en el sitio se usa el logotipo
+  completo, sin texto al lado.
+- `assets/logo-simbolo.png` — sólo el símbolo, blanco sobre transparente.
+- `assets/favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`,
+  `icon-512.png` — el símbolo montado sobre un cuadro oscuro redondeado,
+  porque siendo blanco desaparecería en pestañas de tema claro.
+
+El nombre sigue estando en el `<title>`, en el `alt` del logotipo y en los
+encabezados, así que retirarlo de la barra no le quita señal a los buscadores.
+
 ## Datos de contacto
 
 - WhatsApp **+52 614 216 8738** → `wa.me/526142168738`
