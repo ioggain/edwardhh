@@ -18,6 +18,10 @@
 
 <link rel="canonical" href="https://www.edwardhh.com/">
 
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -153,9 +157,18 @@ em.hl{ font-style:italic; color:var(--brass); }
 .brand{
   font-family:var(--serif); font-size:1.16rem; letter-spacing:.04em;
   text-decoration:none; white-space:nowrap; flex:none;
+  display:inline-flex; align-items:center; gap:11px;
 }
+.brand-mark{
+  height:26px; width:auto; flex:none;
+  transition:transform .5s var(--ease), opacity .4s var(--ease);
+  opacity:.94;
+}
+.brand:hover .brand-mark{ transform:rotate(90deg); opacity:1; }
+@media (prefers-reduced-motion: reduce){ .brand:hover .brand-mark{ transform:none; } }
+@media (max-width:420px){ .brand-name{ display:none; } .brand-mark{ height:30px; } }
 .brand b{ font-weight:400; }
-.brand span{ color:var(--brass); }
+.brand-name > span{ color:var(--brass); }
 
 .nav-links{ display:flex; gap:clamp(14px,1.8vw,30px); align-items:center; }
 .nav-links a{
@@ -519,7 +532,10 @@ figure.wide figcaption{
 <!-- ══════════════════ NAVEGACIÓN ══════════════════ -->
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="brand" href="#/inicio"><b>Edward</b> <span>H. H.</span></a>
+    <a class="brand" href="#/inicio" aria-label="Edward H. H. — inicio">
+      <img class="brand-mark" src="assets/logo-simbolo.png" alt="" width="235" height="319">
+      <span class="brand-name"><b>Edward</b> <span>H. H.</span></span>
+    </a>
 
     <nav class="nav-links" id="navlinks" aria-label="Principal">
       <a href="#/servicios"><span data-l="es">Servicios</span><span data-l="en">Services</span></a>
