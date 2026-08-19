@@ -131,8 +131,15 @@ proveedor elegido.
 | `sala-juntas.jpg`, `aula-grupo.jpg`, `taller-cerca.jpg` | Docencia |
 | `italia.jpg`, `grupo-equipo.jpg` | Biografía |
 | `musica.jpg` | Biografía, «Fuera del escenario» |
-| `comunidad.jpg` | Visión, sección «La raíz» |
-| `aula-mesa.jpg`, `taller-sala.jpg`, `start-why.jpg`, `spaceapps.jpg`, `kungfu-saludo.jpg`, `kungfu-bn.jpg`, `podio.jpg` | Disponibles, sin colocar |
+| `comunidad.jpg` | Visión → La raíz, sección de fe |
+| `plantas.jpg` | La raíz, «Fuera del escenario» |
+| `musica-guitarra.jpg` | La raíz, «Fuera del escenario» |
+| `musica-instrumentos.jpg`, `musica-coro.jpg`, `musica-piano.jpg` | La raíz, fila de música |
+| `meditacion.jpg`, `parado-cabeza.jpg` | La raíz, bloque de kung fu |
+| `logo-edwardhh.png` | Barra superior |
+| `logo-simbolo.png` | Disponible para redes y papelería |
+| `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` | Iconos del navegador |
+| `aula-mesa.jpg`, `taller-sala.jpg`, `start-why.jpg`, `spaceapps.jpg`, `kungfu-saludo.jpg`, `kungfu-bn.jpg`, `podio.jpg`, `retrato-bn.jpg` | Disponibles, sin colocar |
 
 ### Cómo mandar fotos nuevas
 
