@@ -103,8 +103,31 @@ proveedor elegido.
    las descripciones de conferencias son borradores escritos a partir del
    currículum. Conviene aprobarlos o reescribirlos con calma.
 
-Ya resueltos: el correo (`edward@edwardhh.com`, activo en Zoho Mail) y el
-teléfono (614 216 8738, confirmado).
+Ya resueltos: el correo (`edward@edwardhh.com`, activo en Zoho Mail), el
+teléfono (614 216 8738, confirmado) y el formulario de contacto (ver abajo).
+
+---
+
+## El formulario de contacto
+
+El botón «Enviar mensaje» **ya no abre el correo del visitante**: envía los
+datos en silencio a un Google Apps Script propio, que hace dos cosas al
+mismo tiempo:
+
+1. Agrega una fila a una hoja de Google llamada **«Contactos edwardhh.com»**
+   (aparece sola en el Drive de la cuenta que lo publicó).
+2. Manda un correo a `edward@edwardhh.com` con los datos ya ordenados.
+
+Si algún día se necesita cambiar a quién llega el correo, o el formato del
+mensaje, se edita el código del Apps Script (Google → el proyecto llamado
+"Contacto edwardhh" → función `doPost`) y no hace falta tocar este
+repositorio, salvo que cambie la URL del servicio (eso sí vive en
+`index.html`, constante `SHEETS_URL`).
+
+Si el servicio no responde —sin internet, el script se borró, etc.— el
+botón cae de vuelta a abrir el correo del visitante con el mensaje ya
+escrito, igual que antes. El botón de WhatsApp funciona exactamente igual
+que siempre.
 
 ---
 

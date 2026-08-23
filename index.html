@@ -2076,12 +2076,13 @@ figure.wide figcaption{
               <span data-l="es">Enviar por WhatsApp</span><span data-l="en">Send via WhatsApp</span> <span class="arrow">→</span>
             </button>
             <button class="btn ghost" type="button" id="sendmail">
-              <span data-l="es">Enviar por correo</span><span data-l="en">Send by email</span>
+              <span data-l="es">Enviar mensaje</span><span data-l="en">Send message</span>
             </button>
           </div>
+          <p class="dim" id="sendstatus" style="font-size:.84rem; margin:0; min-height:1.2em"></p>
           <p class="dim" style="font-size:.84rem; margin:0">
-            <span data-l="es">El formulario abre su WhatsApp o su correo con el mensaje ya escrito. No se guarda nada en este sitio.</span>
-            <span data-l="en">The form opens your WhatsApp or email client with the message already written. Nothing is stored on this site.</span>
+            <span data-l="es">El botón de WhatsApp abre la aplicación con el mensaje ya escrito. «Enviar mensaje» llega directo a mi bandeja.</span>
+            <span data-l="en">The WhatsApp button opens the app with the message already written. "Send message" goes straight to my inbox.</span>
           </p>
         </form>
       </div>
@@ -2273,10 +2274,47 @@ figure.wide figcaption{
     var c = compose();
     window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(c.body), "_blank", "noopener");
   });
+  var SHEETS_URL = "https://script.google.com/macros/s/AKfycbzN2ZYR-F330lw-8OlKRJoXOHWjMtbr3P9NqWcOeIQ03FnLRynzv9vcGo8eT8kV1wApzw/exec";
   var mailBtn = document.getElementById("sendmail");
+  var status  = document.getElementById("sendstatus");
+
+  function setStatus(texto, color){
+    if (!status) return;
+    status.textContent = texto;
+    status.style.color = color || "";
+  }
+
   if (mailBtn) mailBtn.addEventListener("click", function(){
-    var c = compose();
-    window.location.href = "mailto:" + MAIL + "?subject=" + encodeURIComponent(c.subject) + "&body=" + encodeURIComponent(c.body);
+    var l = document.documentElement.getAttribute("data-lang");
+    var g = function(id){ var e = document.getElementById(id); return e ? e.value.trim() : ""; };
+    var tipoSel = document.getElementById("f-tipo");
+    var tipo = tipoSel ? (tipoSel.options[tipoSel.selectedIndex].getAttribute("data-" + l) || tipoSel.value) : "";
+
+    var datos = new URLSearchParams();
+    datos.set("nombre", g("f-nombre"));
+    datos.set("empresa", g("f-empresa"));
+    datos.set("tipo", tipo);
+    datos.set("fecha", g("f-fecha"));
+    datos.set("lugar", g("f-lugar"));
+    datos.set("mensaje", g("f-msg"));
+
+    mailBtn.disabled = true;
+    setStatus(l === "en" ? "Sending…" : "Enviando…");
+
+    fetch(SHEETS_URL, { method: "POST", mode: "no-cors", body: datos })
+      .then(function(){
+        setStatus(l === "en" ? "Sent — thank you, I will get back to you soon." : "Enviado — gracias, le responderé pronto.", "var(--jade)");
+        form.reset();
+      })
+      .catch(function(){
+        // Sin conexión al servicio: se deja el correo abierto como respaldo.
+        var c = compose();
+        window.location.href = "mailto:" + MAIL + "?subject=" + encodeURIComponent(c.subject) + "&body=" + encodeURIComponent(c.body);
+        setStatus(l === "en" ? "Could not connect — opening your email client instead." : "No se pudo conectar — se abrió su correo como respaldo.");
+      })
+      .finally(function(){
+        mailBtn.disabled = false;
+      });
   });
 
   /* ---------------- arranque ---------------- */

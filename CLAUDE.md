@@ -118,6 +118,32 @@ El logotipo es un monograma de dos **H** giradas 45° y entrelazadas
 El nombre sigue estando en el `<title>`, en el `alt` del logotipo y en los
 encabezados, así que retirarlo de la barra no le quita señal a los buscadores.
 
+## Formulario de contacto
+
+El botón «Enviar mensaje» del formulario (`#/contacto`) ya no abre el
+cliente de correo del visitante: envía los datos por `fetch` (POST,
+`mode: "no-cors"`) a un **Google Apps Script** desplegado como aplicación
+web, que:
+
+1. Agrega una fila a la hoja de Google **«Contactos edwardhh.com»** (vive
+   en el Drive personal del cliente, no en este repositorio).
+2. Manda un correo con los datos ya formateados a `edward@edwardhh.com`.
+
+La URL del servicio está escrita directamente en `index.html`
+(constante `SHEETS_URL`, dentro del `<script>` final). Es la URL pública de
+implementación de Apps Script — no es un secreto que deba ocultarse, pero
+si el cliente la redespliega desde Google (nueva versión del script), hay
+que actualizar esa constante con la URL nueva.
+
+Si la conexión falla (sin internet, el script se borra, etc.), el botón
+cae de vuelta a abrir `mailto:edward@edwardhh.com` con el mensaje ya
+redactado — igual que se comportaba antes. El botón de WhatsApp no cambió.
+
+**No hay backend propio.** El sitio sigue siendo estático; Apps Script es
+la única pieza que vive fuera de este repositorio, y es del cliente, no
+nuestra — no se puede probar su envío real desde una sesión sin salida a
+internet; se verifica interceptando la llamada de red con Playwright.
+
 ## Datos de contacto
 
 - WhatsApp **+52 614 216 8738** → `wa.me/526142168738`
