@@ -129,6 +129,15 @@ web, que:
    en el Drive personal del cliente, no en este repositorio).
 2. Manda un correo con los datos ya formateados a `edward@edwardhh.com`.
 
+Campos del formulario: nombre, empresa, necesidad (obligatorios) y correo,
+WhatsApp (**opcionales**, marcados así en la propia etiqueta). No hay campo
+de fecha ni de ciudad — se quitaron porque no aplican a todas las opciones
+del menú «¿Qué necesita?» (un ensayo de fe no tiene fecha de evento).
+
+Botones: **«Enviar»** (estilo `.btn` primario) es la opción principal y
+manda al Apps Script. **«Enviar por WhatsApp»** (`.btn wa`, verde) es el
+complemento, a la derecha — abre WhatsApp con el mismo contenido.
+
 La URL del servicio está escrita directamente en `index.html`
 (constante `SHEETS_URL`, dentro del `<script>` final). Es la URL pública de
 implementación de Apps Script — no es un secreto que deba ocultarse, pero

@@ -2057,12 +2057,12 @@ figure.wide figcaption{
 
           <div class="form-row">
             <div class="field">
-              <label for="f-fecha"><span data-l="es">Fecha tentativa</span><span data-l="en">Tentative date</span></label>
-              <input id="f-fecha" name="fecha" type="date">
+              <label for="f-correo"><span data-l="es">Correo (opcional)</span><span data-l="en">Email (optional)</span></label>
+              <input id="f-correo" name="correo" type="email" autocomplete="email">
             </div>
             <div class="field">
-              <label for="f-lugar"><span data-l="es">Ciudad / formato</span><span data-l="en">City / format</span></label>
-              <input id="f-lugar" name="lugar" type="text" placeholder="Chihuahua, CDMX, remoto…">
+              <label for="f-whatsapp"><span data-l="es">WhatsApp (opcional)</span><span data-l="en">WhatsApp (optional)</span></label>
+              <input id="f-whatsapp" name="whatsapp" type="tel" autocomplete="tel" placeholder="614 216 8738">
             </div>
           </div>
 
@@ -2072,17 +2072,17 @@ figure.wide figcaption{
           </div>
 
           <div class="btn-row" style="margin-top:6px">
+            <button class="btn" type="button" id="sendmail">
+              <span data-l="es">Enviar</span><span data-l="en">Send</span>
+            </button>
             <button class="btn wa" type="submit">
               <span data-l="es">Enviar por WhatsApp</span><span data-l="en">Send via WhatsApp</span> <span class="arrow">→</span>
-            </button>
-            <button class="btn ghost" type="button" id="sendmail">
-              <span data-l="es">Enviar mensaje</span><span data-l="en">Send message</span>
             </button>
           </div>
           <p class="dim" id="sendstatus" style="font-size:.84rem; margin:0; min-height:1.2em"></p>
           <p class="dim" style="font-size:.84rem; margin:0">
-            <span data-l="es">El botón de WhatsApp abre la aplicación con el mensaje ya escrito. «Enviar mensaje» llega directo a mi bandeja.</span>
-            <span data-l="en">The WhatsApp button opens the app with the message already written. "Send message" goes straight to my inbox.</span>
+            <span data-l="es">«Enviar» llega directo a mi bandeja. El botón de WhatsApp, si lo prefiere, abre la aplicación con el mensaje ya escrito.</span>
+            <span data-l="en">"Send" goes straight to my inbox. The WhatsApp button, if you prefer, opens the app with the message already written.</span>
           </p>
         </form>
       </div>
@@ -2255,16 +2255,16 @@ figure.wide figcaption{
     var tipo = tipoSel ? (tipoSel.options[tipoSel.selectedIndex].getAttribute("data-" + l) || tipoSel.value) : "";
 
     var L = (l === "en")
-      ? { hi:"Hello Edward, I'm writing from your website.", n:"Name", c:"Company", t:"Need", d:"Date", p:"City / format", m:"Context" }
-      : { hi:"Hola Edward, le escribo desde su sitio web.", n:"Nombre", c:"Empresa", t:"Necesidad", d:"Fecha", p:"Ciudad / formato", m:"Contexto" };
+      ? { hi:"Hello Edward, I'm writing from your website.", n:"Name", c:"Company", t:"Need", e:"Email", w:"WhatsApp", m:"Context" }
+      : { hi:"Hola Edward, le escribo desde su sitio web.", n:"Nombre", c:"Empresa", t:"Necesidad", e:"Correo", w:"WhatsApp", m:"Contexto" };
 
     var lines = [L.hi, ""];
-    if (g("f-nombre"))  lines.push(L.n + ": " + g("f-nombre"));
-    if (g("f-empresa")) lines.push(L.c + ": " + g("f-empresa"));
-    if (tipo)           lines.push(L.t + ": " + tipo);
-    if (g("f-fecha"))   lines.push(L.d + ": " + g("f-fecha"));
-    if (g("f-lugar"))   lines.push(L.p + ": " + g("f-lugar"));
-    if (g("f-msg"))     lines.push("", L.m + ": " + g("f-msg"));
+    if (g("f-nombre"))   lines.push(L.n + ": " + g("f-nombre"));
+    if (g("f-empresa"))  lines.push(L.c + ": " + g("f-empresa"));
+    if (tipo)            lines.push(L.t + ": " + tipo);
+    if (g("f-correo"))   lines.push(L.e + ": " + g("f-correo"));
+    if (g("f-whatsapp")) lines.push(L.w + ": " + g("f-whatsapp"));
+    if (g("f-msg"))      lines.push("", L.m + ": " + g("f-msg"));
     return { body: lines.join("\n"), subject: (l === "en" ? "Enquiry from edwardhh.com — " : "Solicitud desde edwardhh.com — ") + tipo };
   }
 
@@ -2294,8 +2294,8 @@ figure.wide figcaption{
     datos.set("nombre", g("f-nombre"));
     datos.set("empresa", g("f-empresa"));
     datos.set("tipo", tipo);
-    datos.set("fecha", g("f-fecha"));
-    datos.set("lugar", g("f-lugar"));
+    datos.set("correo", g("f-correo"));
+    datos.set("whatsapp", g("f-whatsapp"));
     datos.set("mensaje", g("f-msg"));
 
     mailBtn.disabled = true;
