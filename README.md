@@ -99,15 +99,12 @@ proveedor elegido.
 
 ## Pendientes antes de publicar
 
-1. **Crear el correo `hola@edwardhh.com`.** El sitio ya lo usa. Mientras no
-   exista, el único canal que funciona es WhatsApp. Casi todos los proveedores
-   de dominio incluyen el correo sin costo adicional.
-2. **Revisar los textos.** Los ensayos de la sección «Futuro», las ideas del
-   cuaderno y las descripciones de conferencias son borradores escritos a partir
-   del currículum. Dicen cosas en nombre de Edward y deben aprobarse o
-   reescribirse antes de que el sitio sea público.
-3. **Confirmar el teléfono.** El sitio anterior publicaba +52 6146 88 72 71 y el
-   sitio actual usa 614 216 8738. Hay que verificar cuál es el correcto.
+1. **Revisar los textos.** Los ensayos de la sección «Ideas», el cuaderno y
+   las descripciones de conferencias son borradores escritos a partir del
+   currículum. Conviene aprobarlos o reescribirlos con calma.
+
+Ya resueltos: el correo (`edward@edwardhh.com`, activo en Zoho Mail) y el
+teléfono (614 216 8738, confirmado).
 
 ---
 

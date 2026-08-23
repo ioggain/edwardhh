@@ -121,7 +121,8 @@ encabezados, así que retirarlo de la barra no le quita señal a los buscadores.
 ## Datos de contacto
 
 - WhatsApp **+52 614 216 8738** → `wa.me/526142168738`
-- Correo `hola@edwardhh.com` *(pendiente de crear en el dominio)*
+- Correo `edward@edwardhh.com` — cuenta real en Zoho Mail, activa desde
+  agosto de 2026. Alias pendientes de crear en Zoho: `agenda@`, `hola@`.
 - LinkedIn `/omareduardohh`
 
 ## Antes de dar por terminado un cambio
