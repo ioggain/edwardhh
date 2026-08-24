@@ -155,6 +155,11 @@ internet; se verifica interceptando la llamada de red con Playwright.
 
 ## Datos de contacto
 
+- Calendly `https://calendly.com/eduardohh` — para quien prefiere agendar
+  sin escribir. Enlazado en dos lugares: el botón «Agendar una
+  conversación» de la portada (antes solo llevaba a `#/contacto`, ahora
+  abre Calendly de verdad) y una línea propia en «Directo», entre WhatsApp
+  y Correo.
 - WhatsApp **+52 614 216 8738** → `wa.me/526142168738`
 - Correo `edward@edwardhh.com` — cuenta real en Zoho Mail, activa desde
   agosto de 2026. Alias pendientes de crear en Zoho: `agenda@`, `hola@`.
