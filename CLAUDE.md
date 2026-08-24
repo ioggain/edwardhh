@@ -175,6 +175,21 @@ internet; se verifica interceptando la llamada de red con Playwright.
 Revisar que las dos versiones de idioma quedaron iguales de actualizadas, que
 no hay imágenes rotas y que no aparece desbordamiento horizontal en móvil.
 
+## SEO técnico
+
+`robots.txt` y `sitemap.xml` viven en la raíz. El sitemap lista **una sola
+URL**, la raíz (`https://www.edwardhh.com/`) — no una por sección. Es
+deliberado, no un descuido: el sitio navega por rutas de hash
+(`#/servicios`, `#/contacto`...), y un fragmento después de `#` nunca llega
+al servidor ni lo indexa Google como página aparte. Poner `#/servicios` en
+el sitemap no serviría de nada. Si algún día se necesita que cada sección
+tenga su propia URL indexable, hay que migrar de rutas de hash a rutas
+reales (History API + páginas de respaldo en el servidor), lo cual es un
+cambio de arquitectura, no un ajuste del sitemap.
+
+Al actualizar contenido de forma importante, conviene refrescar la fecha
+`<lastmod>` de `sitemap.xml`.
+
 ## Dominio
 
 El sitio se publica hoy en `ioggain.github.io/edwardhh/`. Para conectar
