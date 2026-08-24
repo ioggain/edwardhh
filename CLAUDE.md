@@ -156,10 +156,15 @@ internet; se verifica interceptando la llamada de red con Playwright.
 ## Datos de contacto
 
 - Calendly `https://calendly.com/eduardohh` — para quien prefiere agendar
-  sin escribir. Enlazado en dos lugares: el botón «Agendar una
-  conversación» de la portada (antes solo llevaba a `#/contacto`, ahora
-  abre Calendly de verdad) y una línea propia en «Directo», entre WhatsApp
-  y Correo.
+  sin escribir. Enlazado en cuatro lugares:
+  1. Botón «Agendar una conversación» de la portada (antes solo llevaba a
+     `#/contacto`, ahora abre Calendly de verdad).
+  2. Línea propia en «Directo» (`#/contacto`), entre WhatsApp y Correo.
+  3. Tercer botón del formulario de contacto, junto a «Enviar» y «Enviar
+     por WhatsApp» (estilo `.btn ghost`, flecha ↗ de salida).
+  4. Tarjeta ancha (`grid-column:1/-1`) al final de «Programas» en
+     `#/servicios`, como «Sesión de consultoría · 1 hora» — la entrada de
+     bajo compromiso frente a los tres programas de meses.
 - WhatsApp **+52 614 216 8738** → `wa.me/526142168738`
 - Correo `edward@edwardhh.com` — cuenta real en Zoho Mail, activa desde
   agosto de 2026. Alias pendientes de crear en Zoho: `agenda@`, `hola@`.
